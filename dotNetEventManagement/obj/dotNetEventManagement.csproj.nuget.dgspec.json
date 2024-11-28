@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\#GroupProject\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement.csproj": {}
+    "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement.csproj": {}
   },
   "projects": {
-    "D:\\#GroupProject\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement.csproj": {
+    "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\#GroupProject\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement.csproj",
+        "projectUniqueName": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement.csproj",
         "projectName": "dotNetEventManagement",
-        "projectPath": "D:\\#GroupProject\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement.csproj",
+        "projectPath": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement.csproj",
         "packagesPath": "C:\\Users\\annc1\\.nuget\\packages\\",
-        "outputPath": "D:\\#GroupProject\\dotNetEventManagement\\dotNetEventManagement\\dotNetEventManagement\\obj\\",
+        "outputPath": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\annc1\\AppData\\Roaming\\NuGet\\NuGet.Config",
