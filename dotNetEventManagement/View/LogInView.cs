@@ -15,6 +15,7 @@ namespace dotNetEventManagement.View
     public partial class LogInView : Form
     {
         private UserController userController;
+
         public LogInView()
         {
             InitializeComponent();
@@ -26,7 +27,13 @@ namespace dotNetEventManagement.View
             panelContainerCenter();
             lblHeaderCenter();
             panelLogInCenter();
+        }
 
+        private void LogInView_Resize(object sender, EventArgs e)
+        {
+            panelContainerCenter();
+            lblHeaderCenter();
+            panelLogInCenter();
         }
 
         private void panelContainerCenter()
@@ -47,29 +54,24 @@ namespace dotNetEventManagement.View
             panelLogIn.Top = (panelContainer.ClientSize.Height - panelLogIn.Height) / 2;
         }
 
-        private void lblForgetPassword_Click(object sender, EventArgs e)
+        private void ClearE()
         {
-
+            lblUsernameE.Text = "";
+            lblPasswordE.Text = "";
         }
-
-        private void LogInView_Resize(object sender, EventArgs e)
-        {
-            panelContainerCenter();
-            lblHeaderCenter();
-            panelLogInCenter();
-        }
-
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             bool foundE = false;
             ClearE();
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            if (string.IsNullOrEmpty(username)) {
+            if (string.IsNullOrEmpty(username))
+            {
                 lblUsernameE.Text = "tên người dùng không được để trống";
                 foundE = true;
             }
-            if (String.IsNullOrEmpty(password)) {
+            if (String.IsNullOrEmpty(password))
+            {
                 lblPasswordE.Text = "mật khẩu không được để trống";
                 foundE = true;
             }
@@ -85,16 +87,20 @@ namespace dotNetEventManagement.View
                 lblUsernameE.Text = "tài khoản không tồn tại!";
                 return;
             }
-            else if (status == LoginStatus.PasswordNotFound) {
+            else if (status == LoginStatus.PasswordNotFound)
+            {
                 lblPasswordE.Text = "sai mật khẩu!";
                 lblForgetPassword.ForeColor = Color.Red;
+                lblForgetPassword.Font = new Font("Sogoe UI", 10);
                 return;
-            }else if(status == LoginStatus.Admin)
+            }
+            else if (status == LoginStatus.Admin)
             {
                 this.Hide();
                 new AdminHome().ShowDialog();
                 this.Close();
-            }else if(status == LoginStatus.User)
+            }
+            else if (status == LoginStatus.User)
             {
                 this.Hide();
                 new UserHome().ShowDialog();
@@ -103,10 +109,12 @@ namespace dotNetEventManagement.View
 
         }
 
-        private void ClearE()
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
-            lblUsernameE.Text = "";
-            lblPasswordE.Text = "";
+            this.Hide();
+            new SignUpView().ShowDialog();
+            this.Close();
+
         }
     }
 }

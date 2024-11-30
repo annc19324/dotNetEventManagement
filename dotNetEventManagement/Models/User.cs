@@ -6,8 +6,22 @@ using System.Threading.Tasks;
 
 namespace dotNetEventManagement.Models
 {
-    internal class User
+    public class User
     {
+        public User()
+        {
+        }
+
+        public User(string username, string fullname, string password, DateTime dateOfBirth, string mail, string phone)
+        {
+            Username = username;
+            Fullname = fullname;
+            Password = password;
+            DateOfBirth = dateOfBirth;
+            Mail = mail;
+            Phone = phone;
+        }
+
         public User(int userId, string username, string fullname, string password, DateTime dateOfBirth, string mail, string phone, string role)
         {
             UserId = userId;
@@ -20,13 +34,13 @@ namespace dotNetEventManagement.Models
             Role = role;
         }
 
-        private int UserId { get; set; }
-        private string Username { get; set; }
-        private string Fullname {  get; set; }
-        private string Password { get; set; }
-        private DateTime DateOfBirth {  get; set; }
-        private string Mail { get; set; }
-        private string Phone {  get; set; }
-        private string Role {  get; set; }
+        public int UserId { get; set; }
+        public string Username { get; set; }
+        public string Fullname { get; set; }
+        public string Password { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string Mail { get; set; }
+        public string Phone { get; set; }
+        public string Role { get; set; }
     }
 }

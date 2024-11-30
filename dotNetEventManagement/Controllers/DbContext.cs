@@ -9,7 +9,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace dotNetEventManagement.Controllers
 {
-    internal class DbContext
+    public class DbContext
     {
         private readonly string connectionString = "Data Source=LAPTOP_ANNC\\MSSQLSERVER_AN; Initial Catalog=dotNetEventManagement; User Id = sa; Password=12345; TrustServerCertificate=true;";
         public SqlConnection GetConnection()

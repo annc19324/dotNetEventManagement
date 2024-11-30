@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\A_GroupProject\\dotNetEventManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|d:\\a_groupproject\\dotneteventmanagement\\dotneteventmanagement\\view\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|solutionrelative:dotneteventmanagement\\view\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|d:\\a_groupproject\\dotneteventmanagement\\dotneteventmanagement\\view\\signupview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|solutionrelative:dotneteventmanagement\\view\\signupview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|d:\\a_groupproject\\dotneteventmanagement\\dotneteventmanagement\\view\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|solutionrelative:dotneteventmanagement\\view\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|d:\\a_groupproject\\dotneteventmanagement\\dotneteventmanagement\\view\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|solutionrelative:dotneteventmanagement\\view\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|d:\\a_groupproject\\dotneteventmanagement\\dotneteventmanagement\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|solutionrelative:dotneteventmanagement\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|d:\\a_groupproject\\dotneteventmanagement\\dotneteventmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|solutionrelative:dotneteventmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|d:\\a_groupproject\\dotneteventmanagement\\dotneteventmanagement\\view\\signupview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|solutionrelative:dotneteventmanagement\\view\\signupview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|d:\\a_groupproject\\dotneteventmanagement\\dotneteventmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|solutionrelative:dotneteventmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|d:\\a_groupproject\\dotneteventmanagement\\dotneteventmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C7D0574-FC57-48BA-A4E8-533DA4394B73}|dotNetEventManagement\\dotNetEventManagement.csproj|solutionrelative:dotneteventmanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,53 +39,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\Program.cs",
-              "RelativeDocumentMoniker": "dotNetEventManagement\\Program.cs",
-              "ToolTip": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\Program.cs",
-              "RelativeToolTip": "dotNetEventManagement\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T08:05:33.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LogInView.cs",
-              "DocumentMoniker": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\LogInView.cs",
-              "RelativeDocumentMoniker": "dotNetEventManagement\\View\\LogInView.cs",
-              "ToolTip": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\LogInView.cs",
-              "RelativeToolTip": "dotNetEventManagement\\View\\LogInView.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAADwv2YAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T08:00:26.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LogInView.cs [Design]",
-              "DocumentMoniker": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\LogInView.cs",
-              "RelativeDocumentMoniker": "dotNetEventManagement\\View\\LogInView.cs",
-              "ToolTip": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\LogInView.cs [Design]",
-              "RelativeToolTip": "dotNetEventManagement\\View\\LogInView.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T07:55:14.315Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\Models\\User.cs",
               "RelativeDocumentMoniker": "dotNetEventManagement\\Models\\User.cs",
               "ToolTip": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\Models\\User.cs",
               "RelativeToolTip": "dotNetEventManagement\\Models\\User.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAB2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T05:56:51.765Z",
+              "WhenOpened": "2024-11-29T19:52:53.381Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SignUpView.cs [Design]",
+              "DocumentMoniker": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\SignUpView.cs",
+              "RelativeDocumentMoniker": "dotNetEventManagement\\View\\SignUpView.cs",
+              "ToolTip": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\SignUpView.cs [Design]",
+              "RelativeToolTip": "dotNetEventManagement\\View\\SignUpView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T18:50:45.187Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -95,9 +69,35 @@
               "RelativeDocumentMoniker": "dotNetEventManagement\\Controllers\\UserController.cs",
               "ToolTip": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\Controllers\\UserController.cs",
               "RelativeToolTip": "dotNetEventManagement\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAcwEAAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAHIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T04:41:11.857Z",
+              "WhenOpened": "2024-11-29T16:46:43.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogInView.cs",
+              "DocumentMoniker": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\LogInView.cs",
+              "RelativeDocumentMoniker": "dotNetEventManagement\\View\\LogInView.cs",
+              "ToolTip": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\LogInView.cs",
+              "RelativeToolTip": "dotNetEventManagement\\View\\LogInView.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAASwFsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T16:26:43.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SignUpView.cs",
+              "DocumentMoniker": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\SignUpView.cs",
+              "RelativeDocumentMoniker": "dotNetEventManagement\\View\\SignUpView.cs",
+              "ToolTip": "D:\\A_GroupProject\\dotNetEventManagement\\dotNetEventManagement\\View\\SignUpView.cs",
+              "RelativeToolTip": "dotNetEventManagement\\View\\SignUpView.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAAAMoAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T17:48:01.128Z",
               "EditorCaption": ""
             }
           ]
