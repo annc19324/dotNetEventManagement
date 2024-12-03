@@ -19,14 +19,14 @@ namespace dotNetEventManagement.Controllers
             dbContext = new DbContext();
         }
 
-        public enum LoginStatus
-        {
-            Success,
-            UsernameNotFound,
-            PasswordNotFound,
-            User,
-            Admin
-        }
+        //public enum LoginStatus
+        //{
+        //    Success,
+        //    UsernameNotFound,
+        //    PasswordNotFound,
+        //    User,
+        //    Admin
+        //}
 
         //ma hoa mat khau
 
@@ -45,27 +45,17 @@ namespace dotNetEventManagement.Controllers
         }
 
         //ktra dang nhap username co ton tai khong? neu co thi xem la admin hay user 
-        public LoginStatus CheckLogin(string username, string password)
+        public User CheckLogin(string username, string password)
         {
             using (SqlConnection conn = dbContext.GetConnection())
             {
                 conn.Open();
-                //string queryUserExist = "select count(*) from Users where Username = @username";
-                //using (SqlCommand cmd = new SqlCommand(queryUserExist, conn))
-                //{
-                //    cmd.Parameters.AddWithValue("@username", username);
-                //    int count = (int)cmd.ExecuteScalar();
-                //    if (count == 0)
-                //    {
-                //        return LoginStatus.UsernameNotFound;
-                //    }
-                //}
                 if (!checkUsernameExist(username))
                 {
-                    return LoginStatus.UsernameNotFound;
+                    return null;
                 }
 
-                string queryRole = "select role from Users where username = @username and [password] = @password";
+                string queryRole = "select * from Users where username = @username and [password] = @password";
                 string inputPassword = HashPassword(password);
                 using (SqlCommand cmd = new SqlCommand(queryRole, conn))
                 {
@@ -73,15 +63,27 @@ namespace dotNetEventManagement.Controllers
                     //cmd.Parameters.AddWithValue("@password", password);
                     cmd.Parameters.AddWithValue("@password", inputPassword);
 
-                    var _role = cmd.ExecuteScalar();
-                    if (_role != null)
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        string role = _role.ToString();
-                        return role == "admin" ? LoginStatus.Admin : LoginStatus.User;
-                    }
-                    else
-                    {
-                        return LoginStatus.PasswordNotFound;
+                        if (reader.Read())
+                        {
+                            User user = new User()
+                            {
+                                UserId = reader.GetInt32(reader.GetOrdinal("UserId")),
+                                Username = reader.GetString(reader.GetOrdinal("Username")),
+                                Fullname = reader.GetString(reader.GetOrdinal("Fullname")),
+                                Password = reader.GetString(reader.GetOrdinal("Password")),
+                                DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
+                                Mail = reader.GetString(reader.GetOrdinal("Mail")),
+                                Phone = reader.GetString(reader.GetOrdinal("Phone")),
+                                Role = reader.GetString(reader.GetOrdinal("Role"))
+                            };
+                            return user;
+                        }
+                        else
+                        {
+                            return null;
+                        }
                     }
                 }
             }
