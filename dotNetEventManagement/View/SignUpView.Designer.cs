@@ -87,6 +87,7 @@
             // panelSignUp
             // 
             panelSignUp.Controls.Add(lblCodeE);
+            panelSignUp.Controls.Add(btnSignUp);
             panelSignUp.Controls.Add(label8);
             panelSignUp.Controls.Add(btnSendCode);
             panelSignUp.Controls.Add(txtEnterCode);
@@ -99,7 +100,6 @@
             panelSignUp.Controls.Add(lblFullNameE);
             panelSignUp.Controls.Add(lblUsernameE);
             panelSignUp.Controls.Add(btnBackToLogIn);
-            panelSignUp.Controls.Add(btnSignUp);
             panelSignUp.Controls.Add(txtPhone);
             panelSignUp.Controls.Add(txtConfirmPassword);
             panelSignUp.Controls.Add(txtMail);
@@ -235,7 +235,7 @@
             // btnBackToLogIn
             // 
             btnBackToLogIn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnBackToLogIn.Location = new Point(368, 525);
+            btnBackToLogIn.Location = new Point(3, 529);
             btnBackToLogIn.Name = "btnBackToLogIn";
             btnBackToLogIn.Size = new Size(321, 45);
             btnBackToLogIn.TabIndex = 15;
@@ -246,9 +246,9 @@
             // btnSignUp
             // 
             btnSignUp.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnSignUp.Location = new Point(3, 525);
+            btnSignUp.Location = new Point(384, 529);
             btnSignUp.Name = "btnSignUp";
-            btnSignUp.Size = new Size(284, 45);
+            btnSignUp.Size = new Size(305, 45);
             btnSignUp.TabIndex = 14;
             btnSignUp.Text = "Đăng ký tài khoản";
             btnSignUp.UseVisualStyleBackColor = true;

@@ -116,5 +116,12 @@ namespace dotNetEventManagement.View
             this.Close();
 
         }
+
+        private void lblForgetPassword_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ForgetPassword().ShowDialog();
+            this.Close();
+        }
     }
 }

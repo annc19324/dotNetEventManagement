@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -65,12 +66,12 @@ namespace dotNetEventManagement.Controllers
                 }
 
                 string queryRole = "select role from Users where username = @username and [password] = @password";
-                //string inputPassword = HashPassword(password);
+                string inputPassword = HashPassword(password);
                 using (SqlCommand cmd = new SqlCommand(queryRole, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
-                    //cmd.Parameters.AddWithValue("@password", inputPassword);
+                    //cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@password", inputPassword);
 
                     var _role = cmd.ExecuteScalar();
                     if (_role != null)
@@ -106,6 +107,7 @@ namespace dotNetEventManagement.Controllers
         {
             using (SqlConnection conn = dbContext.GetConnection())
             {
+                string hashedPassword = HashPassword(user.Password);
                 string query = "insert into users (Username, Fullname, Password, DateOfBirth, Mail, Phone, Role) values(@Username, @Fullname, @Password, @DateOfBirth, @Mail, @Phone, @Role)";
                 try
                 {
@@ -119,7 +121,7 @@ namespace dotNetEventManagement.Controllers
                     {
                         cmd.Parameters.AddWithValue("@Username", user.Username);
                         cmd.Parameters.AddWithValue("@Fullname", user.Fullname);
-                        cmd.Parameters.AddWithValue("@Password", user.Password);
+                        cmd.Parameters.AddWithValue("@Password", hashedPassword);
                         cmd.Parameters.AddWithValue("@DateOfBirth", user.DateOfBirth);
                         cmd.Parameters.AddWithValue("@Mail", user.Mail);
                         cmd.Parameters.AddWithValue("@Phone", user.Phone);
@@ -147,6 +149,42 @@ namespace dotNetEventManagement.Controllers
             }
         }
 
+        public bool changePassword(string username, string password, string mail)
+        {
+            string hashedPassword = HashPassword(password);
+            string query = "UPDATE users SET password = @password WHERE username = @username AND mail = @mail";
 
+            using (SqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@username", SqlDbType.NVarChar) { Value = username });
+                    cmd.Parameters.Add(new SqlParameter("@mail", SqlDbType.NVarChar) { Value = mail });
+                    cmd.Parameters.Add(new SqlParameter("@password", SqlDbType.NVarChar) { Value = hashedPassword });
+
+                    try
+                    {
+                        int count = cmd.ExecuteNonQuery();
+                        if (count > 0)
+                        {
+                            Console.WriteLine("Cập nhật mật khẩu thành công");
+                            return true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Cập nhật mật khẩu thất bại");
+                            return false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Lỗi: " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+        }
     }
+
 }

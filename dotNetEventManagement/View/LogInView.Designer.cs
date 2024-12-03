@@ -84,11 +84,12 @@
             // lblForgetPassword
             // 
             lblForgetPassword.AutoSize = true;
-            lblForgetPassword.Location = new Point(401, 203);
+            lblForgetPassword.Location = new Point(401, 215);
             lblForgetPassword.Name = "lblForgetPassword";
             lblForgetPassword.Size = new Size(116, 20);
             lblForgetPassword.TabIndex = 8;
             lblForgetPassword.Text = "Quên mật khẩu?";
+            lblForgetPassword.Click += lblForgetPassword_Click;
             // 
             // btnSignUp
             // 
