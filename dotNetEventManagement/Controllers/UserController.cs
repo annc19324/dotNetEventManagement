@@ -138,6 +138,7 @@ namespace dotNetEventManagement.Controllers
                         }
                     }
                 }
+                //ok
                 catch (Exception ex)
                 {
                     Console.WriteLine("loi ket noi csdl: " + ex.Message);
