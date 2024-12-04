@@ -23,7 +23,7 @@ namespace dotNetEventManagement.View
             this.user = Session.CurrentUser;
             lblFullname.Text = user.Fullname;
 
-   
+
         }
 
         private void OpenMenu()
@@ -162,26 +162,31 @@ namespace dotNetEventManagement.View
             }
         }
 
-        private void UserHome_WindowStateChanged(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-            // Kiểm tra trạng thái cửa sổ: Maximize hoặc Restore
-            if (this.WindowState == FormWindowState.Maximized || this.WindowState == FormWindowState.Normal)
+            DialogResult result = MessageBox.Show("bạn có chắc muốn đăng xuất?", "xác nhận đăng xuất", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
             {
-                panelContainerCenter();
-                lblHeaderCenter();
-                panelHomeCenter();
-                panelNavigationCenter();
-
-                panelHeader.Width = panelMain.Width;
-                panelContainer.Height = panelMain.Height - panelHeader.Height;
-                panelContainer.Width = panelMain.Width;
-                pnlSlideMenu.Height = panelMain.Height;
-                panelHome.Width = panelContainer.Width;
-                panelHome.Height = panelContainer.Height;
+                this.Hide();
+                Session.clear();
+                new LogInView().ShowDialog();
+                this.Close();
             }
         }
 
-    
+        private void btnInformation_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AccountInformation(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
+
+        private void btnEventList_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new EventList(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
     }
 
 

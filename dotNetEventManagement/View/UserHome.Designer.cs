@@ -30,14 +30,14 @@
         {
             panelMain = new Panel();
             pnlSlideMenu = new Panel();
-            label2 = new Label();
+            labelClose = new Label();
             panelContainer = new Panel();
             panelHome = new Panel();
             panelNavigation = new Panel();
             btnLogOut = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnInformation = new Button();
+            btnRegisteredEvent = new Button();
+            btnEventList = new Button();
             panelHeader = new Panel();
             lblMenu = new Label();
             lblFullname = new Label();
@@ -63,23 +63,23 @@
             // 
             // pnlSlideMenu
             // 
-            pnlSlideMenu.Controls.Add(label2);
+            pnlSlideMenu.Controls.Add(labelClose);
             pnlSlideMenu.Location = new Point(0, 0);
             pnlSlideMenu.Name = "pnlSlideMenu";
             pnlSlideMenu.Size = new Size(0, 450);
             pnlSlideMenu.TabIndex = 1;
             // 
-            // label2
+            // labelClose
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold);
-            label2.Location = new Point(141, 6);
-            label2.Name = "label2";
-            label2.Padding = new Padding(5, 0, 0, 0);
-            label2.Size = new Size(54, 46);
-            label2.TabIndex = 0;
-            label2.Text = "✕";
-            label2.Click += label2_Click;
+            labelClose.AutoSize = true;
+            labelClose.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold);
+            labelClose.Location = new Point(141, 6);
+            labelClose.Name = "labelClose";
+            labelClose.Padding = new Padding(5, 0, 0, 0);
+            labelClose.Size = new Size(54, 46);
+            labelClose.TabIndex = 0;
+            labelClose.Text = "✕";
+            labelClose.Click += label2_Click;
             // 
             // panelContainer
             // 
@@ -107,9 +107,9 @@
             panelNavigation.Anchor = AnchorStyles.None;
             panelNavigation.BackColor = Color.WhiteSmoke;
             panelNavigation.Controls.Add(btnLogOut);
-            panelNavigation.Controls.Add(button3);
-            panelNavigation.Controls.Add(button2);
-            panelNavigation.Controls.Add(button1);
+            panelNavigation.Controls.Add(btnInformation);
+            panelNavigation.Controls.Add(btnRegisteredEvent);
+            panelNavigation.Controls.Add(btnEventList);
             panelNavigation.Location = new Point(150, 52);
             panelNavigation.Name = "panelNavigation";
             panelNavigation.Size = new Size(499, 285);
@@ -124,42 +124,45 @@
             btnLogOut.TabIndex = 3;
             btnLogOut.Text = "Đăng xuất";
             btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
             // 
-            // button3
+            // btnInformation
             // 
-            button3.Font = new Font("Segoe UI", 13.8F);
-            button3.Location = new Point(56, 153);
-            button3.Name = "button3";
-            button3.Size = new Size(384, 41);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btnInformation.Font = new Font("Segoe UI", 13.8F);
+            btnInformation.Location = new Point(56, 153);
+            btnInformation.Name = "btnInformation";
+            btnInformation.Size = new Size(384, 41);
+            btnInformation.TabIndex = 2;
+            btnInformation.Text = "Thông tin tài khoản";
+            btnInformation.UseVisualStyleBackColor = true;
+            btnInformation.Click += btnInformation_Click;
             // 
-            // button2
+            // btnRegisteredEvent
             // 
-            button2.Font = new Font("Segoe UI", 13.8F);
-            button2.Location = new Point(56, 95);
-            button2.Name = "button2";
-            button2.Size = new Size(384, 41);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnRegisteredEvent.Font = new Font("Segoe UI", 13.8F);
+            btnRegisteredEvent.Location = new Point(56, 95);
+            btnRegisteredEvent.Name = "btnRegisteredEvent";
+            btnRegisteredEvent.Size = new Size(384, 41);
+            btnRegisteredEvent.TabIndex = 1;
+            btnRegisteredEvent.Text = "Sự kiện đã đăng ký";
+            btnRegisteredEvent.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnEventList
             // 
-            button1.Font = new Font("Segoe UI", 13.8F);
-            button1.Location = new Point(56, 37);
-            button1.Name = "button1";
-            button1.Size = new Size(384, 41);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnEventList.Font = new Font("Segoe UI", 13.8F);
+            btnEventList.Location = new Point(56, 37);
+            btnEventList.Name = "btnEventList";
+            btnEventList.Size = new Size(384, 41);
+            btnEventList.TabIndex = 0;
+            btnEventList.Text = "Đăng ký sự kiện mới";
+            btnEventList.UseVisualStyleBackColor = true;
+            btnEventList.Click += btnEventList_Click;
             // 
             // panelHeader
             // 
             panelHeader.Controls.Add(lblMenu);
             panelHeader.Controls.Add(lblFullname);
-            panelHeader.Location = new Point(3, 10);
+            panelHeader.Location = new Point(3, 11);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(793, 52);
             panelHeader.TabIndex = 0;
@@ -183,7 +186,7 @@
             lblFullname.Anchor = AnchorStyles.None;
             lblFullname.AutoSize = true;
             lblFullname.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFullname.Location = new Point(564, 15);
+            lblFullname.Location = new Point(89, 11);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(0, 31);
             lblFullname.TabIndex = 1;
@@ -217,13 +220,13 @@
         private Panel panelHeader;
         private Label lblFullname;
         private Label lblMenu;
-        private Label label2;
+        private Label labelClose;
         private Panel panelContainer;
         private Panel panelHome;
         private Panel panelNavigation;
         private Button btnLogOut;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnInformation;
+        private Button btnRegisteredEvent;
+        private Button btnEventList;
     }
 }
