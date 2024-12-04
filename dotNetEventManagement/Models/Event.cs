@@ -37,7 +37,17 @@ namespace dotNetEventManagement.Models
             Price = price;
         }
 
-      
+        public Event(string eventName, string startDate, string endDate, string location, string description, string status, double price)
+        {
+            EventName = eventName;
+            StartDate = startDate;
+            EndDate = endDate;
+            Location = location;
+            Description = description;
+            Status = status;
+            Price = price;
+        }
+
 
         // ToString method
         public override string ToString()
