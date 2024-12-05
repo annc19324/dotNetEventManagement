@@ -211,6 +211,8 @@ namespace dotNetEventManagement.View
 
         private void EventList_Load(object sender, EventArgs e)
         {
+            txtSearch.Focus();
+            dgvEventList.CurrentCell = null;
             panelContainerCenter();
             lblHeaderCenter();
             panelHomeCenter();
@@ -255,16 +257,23 @@ namespace dotNetEventManagement.View
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             //ShowAllEvents();
+            dgvEventList.CurrentCell = null;
             var events = eventController.GetAllEvents();
             dgvEventList.DataSource = events;
         }
 
         private void btnRegistEvent_Click(object sender, EventArgs e)
         {
-            int selectedRow = dgvEventList.SelectedCells[0].RowIndex;
-            if (selectedRow == -1)
+            if (dgvEventList.SelectedCells.Count == 0)
             {
-                MessageBox.Show("Chọn ít nhất 1 sự kiện muốn tham gia để đăng ký!");
+                MessageBox.Show("Chọn sự kiện muốn tham gia để đăng ký!");
+                return;
+            }
+            int selectedRow = dgvEventList.SelectedCells[0].RowIndex;
+
+            if (selectedRow < 0 || selectedRow >= dgvEventList.Rows.Count)
+            {
+                MessageBox.Show("Lỗi: chỉ mục hàng không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -289,11 +298,6 @@ namespace dotNetEventManagement.View
             bool isRegistered = eventController.RegisterEvent(Session.getUser().UserId, Session.getUser().Fullname, eventId, eventName);
             if (isRegistered)
             {
-
-                //Event eventDetail = new Event(eventId, eventName, startDate, endDate, location, description, status, price);
-                //Event eventDetail = new Event { EventId = eventId, EventName = eventName, StartDate = startDate, EndDate = endDate, Location = location, Description = description, Status = status, Price = price };
-                //Session.AddRegisteredEvent(eventDetail);
-
                 OrderController orderController = new OrderController();
                 bool isOrderAdded = orderController.AddOrderForAttendee(Session.getUser().UserId, eventId);
 
@@ -341,5 +345,13 @@ namespace dotNetEventManagement.View
             new RegisteredEvent(Session.CurrentUser).ShowDialog();
             this.Close();
         }
+
+        private void EventList_Shown(object sender, EventArgs e)
+        {
+            txtSearch.Focus();
+            dgvEventList.CurrentCell = null;
+   
+        }
+
     }
 }

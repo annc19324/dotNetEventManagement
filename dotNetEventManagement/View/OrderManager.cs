@@ -62,7 +62,7 @@ namespace dotNetEventManagement.View
                 string eventName = txtEventName.Text;
                 DateTime dateorder = dateTimeOrder.Value;
                 string status = cmbStatus.Text;
-                double price = Double.Parse(txtPrice.Text);
+                decimal price = decimal.Parse(txtPrice.Text);
 
                 Order order = new Order
                 {
@@ -170,7 +170,7 @@ namespace dotNetEventManagement.View
                     string eventName = txtEventName.Text;
                     DateTime dateorder = dateTimeOrder.Value;
                     string status = cmbStatus.Text;
-                    double price = Double.Parse(txtPrice.Text);
+                    decimal price = decimal.Parse(txtPrice.Text);
 
                     Order order = new Order
                     {

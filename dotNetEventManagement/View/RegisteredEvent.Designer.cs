@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             panelMain = new Panel();
-            panelHeader = new Panel();
-            lblMenu = new Label();
-            lblFullname = new Label();
             pnlSlideMenu = new Panel();
             panelMenu = new Panel();
             labelLogOut = new Label();
@@ -43,6 +40,9 @@
             labelEventList = new Label();
             labelHome = new Label();
             panelContainer = new Panel();
+            panelHeader = new Panel();
+            lblMenu = new Label();
+            lblFullname = new Label();
             panelHome = new Panel();
             panelContent = new Panel();
             panel2 = new Panel();
@@ -58,10 +58,9 @@
             panel3 = new Panel();
             label1 = new Label();
             panelMain.SuspendLayout();
-            panelHeader.SuspendLayout();
             pnlSlideMenu.SuspendLayout();
             panelMenu.SuspendLayout();
-            panelContainer.SuspendLayout();
+            panelHeader.SuspendLayout();
             panelHome.SuspendLayout();
             panelContent.SuspendLayout();
             panel2.SuspendLayout();
@@ -75,12 +74,135 @@
             // 
             panelMain.Anchor = AnchorStyles.None;
             panelMain.BackColor = Color.Transparent;
-            panelMain.Controls.Add(panelHeader);
             panelMain.Controls.Add(pnlSlideMenu);
+            panelMain.Controls.Add(panelContainer);
+            panelMain.Controls.Add(panelHeader);
             panelMain.Location = new Point(2, 0);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1217, 600);
             panelMain.TabIndex = 2;
+            // 
+            // pnlSlideMenu
+            // 
+            pnlSlideMenu.Controls.Add(panelMenu);
+            pnlSlideMenu.Location = new Point(0, 0);
+            pnlSlideMenu.Name = "pnlSlideMenu";
+            pnlSlideMenu.Size = new Size(0, 594);
+            pnlSlideMenu.TabIndex = 1;
+            // 
+            // panelMenu
+            // 
+            panelMenu.Controls.Add(labelLogOut);
+            panelMenu.Controls.Add(labelClose);
+            panelMenu.Controls.Add(labelChangePassword);
+            panelMenu.Controls.Add(labelHelp);
+            panelMenu.Controls.Add(labelAccountInformation);
+            panelMenu.Controls.Add(labelRegisteredEvent);
+            panelMenu.Controls.Add(labelEventList);
+            panelMenu.Controls.Add(labelHome);
+            panelMenu.Location = new Point(7, 5);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(261, 592);
+            panelMenu.TabIndex = 1;
+            // 
+            // labelLogOut
+            // 
+            labelLogOut.AutoSize = true;
+            labelLogOut.Font = new Font("Segoe UI", 12F);
+            labelLogOut.Location = new Point(12, 329);
+            labelLogOut.Name = "labelLogOut";
+            labelLogOut.Size = new Size(101, 28);
+            labelLogOut.TabIndex = 6;
+            labelLogOut.Text = "Đăng xuất";
+            labelLogOut.Click += labelLogOut_Click;
+            // 
+            // labelClose
+            // 
+            labelClose.AutoSize = true;
+            labelClose.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold);
+            labelClose.Location = new Point(199, 3);
+            labelClose.Name = "labelClose";
+            labelClose.Padding = new Padding(5, 0, 0, 0);
+            labelClose.Size = new Size(54, 46);
+            labelClose.TabIndex = 0;
+            labelClose.Text = "✕";
+            labelClose.Click += labelClose_Click;
+            // 
+            // labelChangePassword
+            // 
+            labelChangePassword.AutoSize = true;
+            labelChangePassword.Font = new Font("Segoe UI", 12F);
+            labelChangePassword.Location = new Point(12, 286);
+            labelChangePassword.Name = "labelChangePassword";
+            labelChangePassword.Size = new Size(129, 28);
+            labelChangePassword.TabIndex = 5;
+            labelChangePassword.Text = "Đổi mật khẩu";
+            labelChangePassword.Click += labelChangePassword_Click;
+            // 
+            // labelHelp
+            // 
+            labelHelp.AutoSize = true;
+            labelHelp.Font = new Font("Segoe UI", 12F);
+            labelHelp.Location = new Point(12, 246);
+            labelHelp.Name = "labelHelp";
+            labelHelp.Size = new Size(84, 28);
+            labelHelp.TabIndex = 4;
+            labelHelp.Text = "Trợ giúp";
+            labelHelp.Click += labelHelp_Click;
+            // 
+            // labelAccountInformation
+            // 
+            labelAccountInformation.AutoSize = true;
+            labelAccountInformation.Font = new Font("Segoe UI", 12F);
+            labelAccountInformation.Location = new Point(12, 203);
+            labelAccountInformation.Name = "labelAccountInformation";
+            labelAccountInformation.Size = new Size(182, 28);
+            labelAccountInformation.TabIndex = 3;
+            labelAccountInformation.Text = "Thông tin tài khoản";
+            labelAccountInformation.Click += labelAccountInformation_Click;
+            // 
+            // labelRegisteredEvent
+            // 
+            labelRegisteredEvent.AutoSize = true;
+            labelRegisteredEvent.Font = new Font("Segoe UI", 12F);
+            labelRegisteredEvent.Location = new Point(12, 153);
+            labelRegisteredEvent.Name = "labelRegisteredEvent";
+            labelRegisteredEvent.Size = new Size(178, 28);
+            labelRegisteredEvent.TabIndex = 2;
+            labelRegisteredEvent.Text = "Sự kiện đã đăng ký";
+            labelRegisteredEvent.Click += labelRegisteredEvent_Click;
+            // 
+            // labelEventList
+            // 
+            labelEventList.AutoSize = true;
+            labelEventList.Font = new Font("Segoe UI", 12F);
+            labelEventList.Location = new Point(12, 105);
+            labelEventList.Name = "labelEventList";
+            labelEventList.Size = new Size(167, 28);
+            labelEventList.TabIndex = 1;
+            labelEventList.Text = "Danh sách sự kiện";
+            labelEventList.Click += labelEventList_Click;
+            // 
+            // labelHome
+            // 
+            labelHome.AutoSize = true;
+            labelHome.Font = new Font("Segoe UI", 12F);
+            labelHome.Location = new Point(12, 59);
+            labelHome.Name = "labelHome";
+            labelHome.Size = new Size(96, 28);
+            labelHome.TabIndex = 0;
+            labelHome.Text = "Trang chủ";
+            labelHome.Click += labelHome_Click;
+            // 
+            // panelContainer
+            // 
+            panelContainer.Anchor = AnchorStyles.None;
+            panelContainer.BackColor = Color.Transparent;
+            panelContainer.Location = new Point(0, 55);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(1224, 549);
+            panelContainer.TabIndex = 2;
+            panelContainer.Click += panelContainer_Click;
             // 
             // panelHeader
             // 
@@ -103,6 +225,7 @@
             lblMenu.Size = new Size(56, 59);
             lblMenu.TabIndex = 0;
             lblMenu.Text = "≡";
+            lblMenu.Click += lblMenu_Click;
             // 
             // lblFullname
             // 
@@ -114,128 +237,14 @@
             lblFullname.Size = new Size(0, 31);
             lblFullname.TabIndex = 1;
             // 
-            // pnlSlideMenu
-            // 
-            pnlSlideMenu.Controls.Add(panelMenu);
-            pnlSlideMenu.Location = new Point(0, 0);
-            pnlSlideMenu.Name = "pnlSlideMenu";
-            pnlSlideMenu.Size = new Size(0, 594);
-            pnlSlideMenu.TabIndex = 1;
-            // 
-            // panelMenu
-            // 
-            panelMenu.Controls.Add(labelLogOut);
-            panelMenu.Controls.Add(labelClose);
-            panelMenu.Controls.Add(labelChangePassword);
-            panelMenu.Controls.Add(labelHelp);
-            panelMenu.Controls.Add(labelAccountInformation);
-            panelMenu.Controls.Add(labelRegisteredEvent);
-            panelMenu.Controls.Add(labelEventList);
-            panelMenu.Controls.Add(labelHome);
-            panelMenu.Location = new Point(7, 5);
-            panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(250, 592);
-            panelMenu.TabIndex = 1;
-            // 
-            // labelLogOut
-            // 
-            labelLogOut.AutoSize = true;
-            labelLogOut.Font = new Font("Segoe UI", 12F);
-            labelLogOut.Location = new Point(12, 329);
-            labelLogOut.Name = "labelLogOut";
-            labelLogOut.Size = new Size(101, 28);
-            labelLogOut.TabIndex = 6;
-            labelLogOut.Text = "Đăng xuất";
-            // 
-            // labelClose
-            // 
-            labelClose.AutoSize = true;
-            labelClose.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold);
-            labelClose.Location = new Point(199, 3);
-            labelClose.Name = "labelClose";
-            labelClose.Padding = new Padding(5, 0, 0, 0);
-            labelClose.Size = new Size(54, 46);
-            labelClose.TabIndex = 0;
-            labelClose.Text = "✕";
-            // 
-            // labelChangePassword
-            // 
-            labelChangePassword.AutoSize = true;
-            labelChangePassword.Font = new Font("Segoe UI", 12F);
-            labelChangePassword.Location = new Point(12, 286);
-            labelChangePassword.Name = "labelChangePassword";
-            labelChangePassword.Size = new Size(129, 28);
-            labelChangePassword.TabIndex = 5;
-            labelChangePassword.Text = "Đổi mật khẩu";
-            // 
-            // labelHelp
-            // 
-            labelHelp.AutoSize = true;
-            labelHelp.Font = new Font("Segoe UI", 12F);
-            labelHelp.Location = new Point(12, 246);
-            labelHelp.Name = "labelHelp";
-            labelHelp.Size = new Size(84, 28);
-            labelHelp.TabIndex = 4;
-            labelHelp.Text = "Trợ giúp";
-            // 
-            // labelAccountInformation
-            // 
-            labelAccountInformation.AutoSize = true;
-            labelAccountInformation.Font = new Font("Segoe UI", 12F);
-            labelAccountInformation.Location = new Point(12, 203);
-            labelAccountInformation.Name = "labelAccountInformation";
-            labelAccountInformation.Size = new Size(182, 28);
-            labelAccountInformation.TabIndex = 3;
-            labelAccountInformation.Text = "Thông tin tài khoản";
-            // 
-            // labelRegisteredEvent
-            // 
-            labelRegisteredEvent.AutoSize = true;
-            labelRegisteredEvent.Font = new Font("Segoe UI", 12F);
-            labelRegisteredEvent.Location = new Point(12, 153);
-            labelRegisteredEvent.Name = "labelRegisteredEvent";
-            labelRegisteredEvent.Size = new Size(178, 28);
-            labelRegisteredEvent.TabIndex = 2;
-            labelRegisteredEvent.Text = "Sự kiện đã đăng ký";
-            // 
-            // labelEventList
-            // 
-            labelEventList.AutoSize = true;
-            labelEventList.Font = new Font("Segoe UI", 12F);
-            labelEventList.Location = new Point(12, 105);
-            labelEventList.Name = "labelEventList";
-            labelEventList.Size = new Size(167, 28);
-            labelEventList.TabIndex = 1;
-            labelEventList.Text = "Danh sách sự kiện";
-            // 
-            // labelHome
-            // 
-            labelHome.AutoSize = true;
-            labelHome.Font = new Font("Segoe UI", 12F);
-            labelHome.Location = new Point(12, 59);
-            labelHome.Name = "labelHome";
-            labelHome.Size = new Size(96, 28);
-            labelHome.TabIndex = 0;
-            labelHome.Text = "Trang chủ";
-            // 
-            // panelContainer
-            // 
-            panelContainer.Anchor = AnchorStyles.None;
-            panelContainer.BackColor = Color.Transparent;
-            panelContainer.Controls.Add(panelHome);
-            panelContainer.Location = new Point(2, 54);
-            panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1217, 549);
-            panelContainer.TabIndex = 2;
-            // 
             // panelHome
             // 
             panelHome.Anchor = AnchorStyles.None;
             panelHome.BackColor = Color.Transparent;
             panelHome.Controls.Add(panelContent);
-            panelHome.Location = new Point(0, 1);
+            panelHome.Location = new Point(2, 55);
             panelHome.Name = "panelHome";
-            panelHome.Size = new Size(1217, 552);
+            panelHome.Size = new Size(1227, 552);
             panelHome.TabIndex = 0;
             // 
             // panelContent
@@ -243,15 +252,15 @@
             panelContent.Anchor = AnchorStyles.None;
             panelContent.BackColor = Color.Transparent;
             panelContent.Controls.Add(panel2);
-            panelContent.Location = new Point(19, 13);
+            panelContent.Location = new Point(24, 13);
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(1173, 521);
             panelContent.TabIndex = 0;
             // 
             // panel2
             // 
-            panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel4);
+            panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel3);
             panel2.Location = new Point(3, 6);
             panel2.Name = "panel2";
@@ -297,14 +306,14 @@
             txtSearch.Location = new Point(3, 3);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(884, 43);
-            txtSearch.TabIndex = 0;
+            txtSearch.TabIndex = 1;
             // 
             // panel4
             // 
+            panel4.Controls.Add(dgvRegisteredEventList);
             panel4.Controls.Add(btnUserHome);
             panel4.Controls.Add(btnShowBill);
             panel4.Controls.Add(btnCancelEvent);
-            panel4.Controls.Add(dgvRegisteredEventList);
             panel4.Location = new Point(3, 119);
             panel4.Name = "panel4";
             panel4.Size = new Size(1161, 379);
@@ -328,7 +337,7 @@
             btnShowBill.Name = "btnShowBill";
             btnShowBill.Size = new Size(244, 47);
             btnShowBill.TabIndex = 2;
-            btnShowBill.Text = "Xem hóa đơn";
+            btnShowBill.Text = "Thanh toán hóa đơn";
             btnShowBill.UseVisualStyleBackColor = true;
             btnShowBill.Click += btnShowBill_Click;
             // 
@@ -349,6 +358,7 @@
             dgvRegisteredEventList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRegisteredEventList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRegisteredEventList.Location = new Point(3, 19);
+            dgvRegisteredEventList.MultiSelect = false;
             dgvRegisteredEventList.Name = "dgvRegisteredEventList";
             dgvRegisteredEventList.ReadOnly = true;
             dgvRegisteredEventList.RowHeadersWidth = 51;
@@ -379,18 +389,21 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1223, 601);
-            Controls.Add(panelContainer);
+            Controls.Add(panelHome);
             Controls.Add(panelMain);
             Name = "RegisteredEvent";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RegisteredEvent";
+            Load += RegisteredEvent_Load;
+            Shown += RegisteredEvent_Shown;
+            Click += RegisteredEvent_Click;
+            Resize += RegisteredEvent_Resize;
             panelMain.ResumeLayout(false);
-            panelHeader.ResumeLayout(false);
-            panelHeader.PerformLayout();
             pnlSlideMenu.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();
-            panelContainer.ResumeLayout(false);
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
             panelHome.ResumeLayout(false);
             panelContent.ResumeLayout(false);
             panel2.ResumeLayout(false);

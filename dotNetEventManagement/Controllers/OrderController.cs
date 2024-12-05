@@ -121,7 +121,7 @@ namespace dotNetEventManagement.Controllers
                             FullName = reader.GetString(reader.GetOrdinal("FullName")),
                             EventId = reader.GetString(reader.GetOrdinal("EventId")),
                             EventName = reader.GetString(reader.GetOrdinal("EventName")),
-                            TotalPrice = Convert.ToDouble(reader.GetDecimal(reader.GetOrdinal("TotalPrice"))),
+                            TotalPrice = (reader.GetDecimal(reader.GetOrdinal("TotalPrice"))),
                             OrderDate = reader.GetDateTime(reader.GetOrdinal("OrderDate")),
                             PaymentStatus = reader.GetString(reader.GetOrdinal("PaymentStatus"))
                         });
@@ -152,7 +152,7 @@ namespace dotNetEventManagement.Controllers
                             FullName = reader.GetString("FullName"), 
                             EventId = reader.GetString("EventId"),
                             EventName = reader.GetString("EventName"),
-                            TotalPrice = Convert.ToDouble(reader.GetDecimal(reader.GetOrdinal("TotalPrice"))),
+                            TotalPrice = (reader.GetDecimal(reader.GetOrdinal("TotalPrice"))),
                             OrderDate = reader.GetDateTime("OrderDate"),
                             PaymentStatus = reader.GetString("PaymentStatus")
                         });
@@ -258,7 +258,7 @@ namespace dotNetEventManagement.Controllers
                             FullName = reader.GetString(reader.GetOrdinal("FullName")),
                             EventId = reader.GetString(reader.GetOrdinal("EventId")),
                             EventName = reader.GetString(reader.GetOrdinal("EventName")),
-                            TotalPrice = reader.GetDouble(reader.GetOrdinal("TotalPrice")),
+                            TotalPrice = (Decimal)reader.GetDecimal(reader.GetOrdinal("TotalPrice")),
                             OrderDate = reader.GetDateTime(reader.GetOrdinal("OrderDate")),
                             PaymentStatus = reader.GetString(reader.GetOrdinal("PaymentStatus"))
                         };

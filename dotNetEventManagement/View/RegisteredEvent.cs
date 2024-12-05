@@ -16,13 +16,14 @@ namespace dotNetEventManagement.View
     {
         private User user;
         private EventController eventController;
+        private bool isOpeningMenu = false;
+        private const int menuWidth = 260;
         public RegisteredEvent(User user)
         {
             InitializeComponent();
             this.user = Session.CurrentUser;
             lblFullname.Text = user.Fullname;
             eventController = new EventController();
-
             showAllEvents();
         }
 
@@ -41,14 +42,22 @@ namespace dotNetEventManagement.View
 
         private void btnCancelEvent_Click(object sender, EventArgs e)
         {
-            int selectedRow = dgvRegisteredEventList.SelectedCells[0].RowIndex;
-            if (selectedRow == -1)
+            if (dgvRegisteredEventList.SelectedCells.Count == 0)
             {
-                MessageBox.Show("vui lòng chọn một sự kiện", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn một sự kiện", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            string eventId = dgvRegisteredEventList.Rows[selectedRow].Cells["EventId"].Value.ToString();
-            int userId = user.UserId; // Giả sử `user.UserId` là ID người dùng hiện tại
+
+            int selectedRow = dgvRegisteredEventList.SelectedCells[0].RowIndex;
+
+            if (selectedRow < 0 || selectedRow >= dgvRegisteredEventList.Rows.Count)
+            {
+                MessageBox.Show("Lỗi: chỉ mục hàng không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string? eventId = dgvRegisteredEventList.Rows[selectedRow].Cells["EventId"].Value.ToString();
+            int userId = user.UserId; 
 
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn hủy đăng ký sự kiện này?",
                                                   "Xác nhận hủy đăng ký",
@@ -57,7 +66,7 @@ namespace dotNetEventManagement.View
 
             if (result == DialogResult.OK)
             {
-                bool isCancelled = eventController.CancelRegistration(userId, eventId);
+                bool isCancelled = eventController.CancelRegistration(userId, eventId : "none");
 
                 if (isCancelled)
                 {
@@ -74,7 +83,39 @@ namespace dotNetEventManagement.View
 
         private void btnShowBill_Click(object sender, EventArgs e)
         {
-            new PayBillView(Session.CurrentUser).ShowDialog();
+            int selectedRow = dgvRegisteredEventList.SelectedRows.Count > 0 ? dgvRegisteredEventList.SelectedRows[0].Index : -1;
+
+            if (selectedRow == -1)
+            {
+                MessageBox.Show("Vui lòng chọn một sự kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Lấy UserId từ Session
+            int userId = Session.getUser().UserId;
+
+            // Lấy EventId từ cột trong DataGridView
+            string? eventId = dgvRegisteredEventList.Rows[selectedRow].Cells[0].Value.ToString();
+
+            // Tìm đơn hàng trong cơ sở dữ liệu
+            OrderController orderController = new OrderController();
+            Order order = orderController.GetOrderByUserIdAndEventId(userId, eventId);
+
+            if (order != null)
+            {
+                if (order.PaymentStatus.Equals("Đã thanh toán", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("Sự kiện này đã được thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    new PayBillView(order).ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy đơn hàng cho sự kiện đã chọn! Có thể bạn đã bị admin xóa đơn hàng, vui lòng hủy sự kiện và đăng ký lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -106,7 +147,153 @@ namespace dotNetEventManagement.View
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            dgvRegisteredEventList.CurrentCell = null;
             showAllEvents();
         }
+
+        private void RegisteredEvent_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegisteredEvent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegisteredEvent_Shown(object sender, EventArgs e)
+        {
+            txtSearch.Focus();
+            dgvRegisteredEventList.CurrentCell = null;
+
+        }
+
+        private void labelHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UserHome(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
+
+        private void labelEventList_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new EventList(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
+
+        private void labelRegisteredEvent_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RegisteredEvent(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
+
+        private void labelAccountInformation_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AccountInformation(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
+
+        private void labelHelp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new HelpView(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
+
+        private void labelChangePassword_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ChangePasswordView(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
+
+        private void labelLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("bạn có chắc muốn đăng xuất?", "xác nhận đăng xuất", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                this.Hide();
+                Session.clear();
+                new LogInView().ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            CloseMenu();
+        }
+
+        private void lblMenu_Click(object sender, EventArgs e)
+        {
+            OpenMenu();
+        }
+
+        private void RegisteredEvent_Resize(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelContainer_Click(object sender, EventArgs e)
+        {
+            if (isOpeningMenu) { 
+                CloseMenu();
+            }
+        }
+
+
+        //them moi
+        private void OpenMenu()
+        {
+            panelContainer.BringToFront();
+            panelHome.SendToBack();
+            panelContainer.BackColor = Color.LightGray;
+            panelHome.Enabled = false;
+            pnlSlideMenu.BringToFront();
+            pnlSlideMenu.BackColor = Color.DarkGray;
+
+            isOpeningMenu = true;
+
+            new Thread(() =>
+            {
+                for (int i = 0; i <= menuWidth; i += 20)
+                {
+                    this.Invoke((Action)(() =>
+                    {
+                        pnlSlideMenu.Size = new Size(i, pnlSlideMenu.Height);
+                    }));
+                    Thread.Sleep(10);
+                }
+            }).Start();
+        }
+
+        private void CloseMenu()
+        {
+            panelHome.BringToFront();
+            panelContainer.SendToBack();
+            //panelContainer.BackColor = Color.Transparent;
+            panelHome.Enabled = true;
+
+            isOpeningMenu = false;
+
+            panelContainer.Visible = true;
+
+            new Thread(() =>
+            {
+                for (int i = menuWidth; i >= 0; i -= 20)
+                {
+                    this.Invoke((Action)(() =>
+                    {
+                        pnlSlideMenu.Size = new Size(i, pnlSlideMenu.Height);
+                    }));
+                    Thread.Sleep(10);
+                }
+            }).Start();
+        }
+
+
     }
 }

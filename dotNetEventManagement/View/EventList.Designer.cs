@@ -215,6 +215,7 @@
             dgvEventList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvEventList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEventList.Location = new Point(3, 19);
+            dgvEventList.MultiSelect = false;
             dgvEventList.Name = "dgvEventList";
             dgvEventList.ReadOnly = true;
             dgvEventList.RowHeadersWidth = 51;
@@ -395,6 +396,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EventList";
             Load += EventList_Load;
+            Shown += EventList_Shown;
             Resize += EventList_Resize;
             panelMain.ResumeLayout(false);
             panelContainer.ResumeLayout(false);
