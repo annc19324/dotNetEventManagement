@@ -25,7 +25,29 @@ namespace dotNetEventManagement.View
             lblFullname.Text = user.Fullname;
             eventController = new EventController();
 
+            dgvEventList.Columns.Clear();
+            var columns = new[]
+            {
+                new { HeaderText = "Mã sự kiện", DataPropertyName = "EventId" },
+                new { HeaderText = "Tên sự kiện", DataPropertyName = "EventName" },
+                new { HeaderText = "Ngày bắt đầu", DataPropertyName = "StartDate" },
+                new { HeaderText = "Ngày kết thúc", DataPropertyName = "EndDate" },
+                new { HeaderText = "Địa điểm", DataPropertyName = "Location" },
+                new { HeaderText = "Mô tả", DataPropertyName = "Description" },
+                new { HeaderText = "Trạng thái", DataPropertyName = "Status" },
+                new { HeaderText = "Giá", DataPropertyName = "Price" }
+            };
+
+            foreach (var column in columns)
+            {
+                dgvEventList.Columns.Add(new DataGridViewTextBoxColumn
+                {
+                    HeaderText = column.HeaderText,
+                    DataPropertyName = column.DataPropertyName
+                });
+            }
             dgvEventList.DataSource = new BindingList<Event>();
+
             ShowAllEvents();
 
         }
@@ -267,8 +289,10 @@ namespace dotNetEventManagement.View
             bool isRegistered = eventController.RegisterEvent(Session.getUser().UserId, Session.getUser().Fullname, eventId, eventName);
             if (isRegistered)
             {
-                Event eventDetail = new Event(eventId, eventName, startDate, endDate, location, description, status, price);
-                Session.AddRegisteredEvent(eventDetail);
+
+                //Event eventDetail = new Event(eventId, eventName, startDate, endDate, location, description, status, price);
+                //Event eventDetail = new Event { EventId = eventId, EventName = eventName, StartDate = startDate, EndDate = endDate, Location = location, Description = description, Status = status, Price = price };
+                //Session.AddRegisteredEvent(eventDetail);
 
                 OrderController orderController = new OrderController();
                 bool isOrderAdded = orderController.AddOrderForAttendee(Session.getUser().UserId, eventId);
@@ -302,6 +326,20 @@ namespace dotNetEventManagement.View
             string keyword = txtSearch.Text;
             var events = eventController.SearchEvents(keyword);
             dgvEventList.DataSource = events;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UserHome(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
+
+        private void btnShowDetail_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RegisteredEvent(Session.CurrentUser).ShowDialog();
+            this.Close();
         }
     }
 }

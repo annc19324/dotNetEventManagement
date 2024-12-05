@@ -146,6 +146,7 @@
             btnRegisteredEvent.TabIndex = 1;
             btnRegisteredEvent.Text = "Sự kiện đã đăng ký";
             btnRegisteredEvent.UseVisualStyleBackColor = true;
+            btnRegisteredEvent.Click += btnRegisteredEvent_Click;
             // 
             // btnEventList
             // 

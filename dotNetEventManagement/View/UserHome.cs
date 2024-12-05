@@ -187,6 +187,13 @@ namespace dotNetEventManagement.View
             new EventList(Session.CurrentUser).ShowDialog();
             this.Close();
         }
+
+        private void btnRegisteredEvent_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RegisteredEvent(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
     }
 
 

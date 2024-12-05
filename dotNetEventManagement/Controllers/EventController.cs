@@ -141,7 +141,6 @@ namespace dotNetEventManagement.Controllers
                 {
                     cmd.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
 
-                   
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -223,6 +222,63 @@ namespace dotNetEventManagement.Controllers
                 return false;
             }
         }
+
+
+        
+        public bool CancelRegistration(int userId, string eventId)
+        {
+            string sql = "delete from attendees where UserId = @UserId and EventId = @EventId";
+            using (SqlConnection conn = dbConnect.ConnectSQL())
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                cmd.Parameters.AddWithValue("@EventId", eventId);
+                int rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+        }
+
+        public List<Event> GetRegisteredEventsByUserId(int userId)
+        {
+            List<Event> events = new List<Event>();
+            string sql = "SELECT Events.* FROM Events JOIN Attendees ON Events.EventId = Attendees.EventId WHERE Attendees.UserId = @UserId";
+
+            try
+            {
+                using (SqlConnection conn = dbConnect.ConnectSQL()) 
+                {
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@UserId", userId); 
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Event eventItem = new Event(
+                                    reader["EventId"].ToString(),
+                                    reader["EventName"].ToString(),
+                                    reader["StartDate"].ToString(),
+                                    reader["EndDate"].ToString(),
+                                    reader["Location"].ToString(),
+                                    reader["Description"].ToString(),
+                                    reader["Status"].ToString(),
+                                    Convert.ToDouble(reader["Price"])
+                                );
+                                events.Add(eventItem);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message); 
+            }
+
+            return events;
+        }
+
     }
 
 }

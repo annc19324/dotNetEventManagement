@@ -38,6 +38,7 @@
             btnSearch = new Button();
             txtSearch = new TextBox();
             panel4 = new Panel();
+            btnBack = new Button();
             btnShowDetail = new Button();
             btnRegistEvent = new Button();
             dgvEventList = new DataGridView();
@@ -136,7 +137,7 @@
             // btnRefresh
             // 
             btnRefresh.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRefresh.Location = new Point(1086, 4);
+            btnRefresh.Location = new Point(1086, 0);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(72, 46);
             btnRefresh.TabIndex = 3;
@@ -166,6 +167,7 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(btnBack);
             panel4.Controls.Add(btnShowDetail);
             panel4.Controls.Add(btnRegistEvent);
             panel4.Controls.Add(dgvEventList);
@@ -174,15 +176,27 @@
             panel4.Size = new Size(1161, 379);
             panel4.TabIndex = 2;
             // 
+            // btnBack
+            // 
+            btnBack.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(291, 329);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(211, 47);
+            btnBack.TabIndex = 5;
+            btnBack.Text = "Trang chủ";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // btnShowDetail
             // 
             btnShowDetail.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnShowDetail.Location = new Point(629, 329);
+            btnShowDetail.Location = new Point(508, 329);
             btnShowDetail.Name = "btnShowDetail";
-            btnShowDetail.Size = new Size(244, 47);
+            btnShowDetail.Size = new Size(365, 47);
             btnShowDetail.TabIndex = 2;
-            btnShowDetail.Text = "Xem chi tiết";
+            btnShowDetail.Text = "Xem chi tiết sự kiện đã đăng ký";
             btnShowDetail.UseVisualStyleBackColor = true;
+            btnShowDetail.Click += btnShowDetail_Click;
             // 
             // btnRegistEvent
             // 
@@ -197,6 +211,7 @@
             // 
             // dgvEventList
             // 
+            dgvEventList.AllowUserToAddRows = false;
             dgvEventList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvEventList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEventList.Location = new Point(3, 19);
@@ -430,5 +445,6 @@
         private Button btnSearch;
         private TextBox txtSearch;
         private Button btnShowDetail;
+        private Button btnBack;
     }
 }
