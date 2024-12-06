@@ -66,12 +66,13 @@ namespace dotNetEventManagement.View
                 // Thêm attendee thông qua controller
 
                 attendeeController.AddAttendee(attendee);
-                
+
                 // Hiển thị lại danh sách các sự kiện và xóa trường nhập liệu
                 LoadAttendee();
                 ClearText();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Lỗi khi thêm : {ex.Message}");
             }
         }
@@ -87,7 +88,7 @@ namespace dotNetEventManagement.View
 
                     // Lấy giá trị OrderId từ cột đầu tiên
                     int attendeeId = (int)dataGridViewAttendee.Rows[selectedRow].Cells[0].Value;
-                    int userId=int.Parse(txtUserId.Text);
+                    int userId = int.Parse(txtUserId.Text);
                     string fullName = txtUserName.Text;
                     string eventId = txtEventId.Text;
                     string eventName = txtEventName.Text;
@@ -109,9 +110,10 @@ namespace dotNetEventManagement.View
                     ClearText();
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Lỗi khi sửa : {ex.Message}");
-            }   
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -181,6 +183,41 @@ namespace dotNetEventManagement.View
                 txtEventName.Text = dataGridViewAttendee.Rows[r].Cells["EventName"].Value.ToString();
                 cmbStatus.Text = dataGridViewAttendee.Rows[r].Cells["Status"].Value.ToString();
             }
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new EventManager().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            new AccountManager().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            new LogInView().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem4_Click_1(object sender, EventArgs e)
+        {
+            new AdminHome().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            new AttendeeManager().ShowDialog();
+            this.Close();
         }
     }
 }

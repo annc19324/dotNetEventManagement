@@ -13,7 +13,7 @@ namespace dotNetEventManagement.Models
         public string EventId { get; set; }
         public string FullName { get; set; }
         public string EventName { get; set; }
-        public decimal TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
         public DateTime OrderDate { get; set; }
         public string PaymentStatus { get; set; }
 
@@ -23,7 +23,7 @@ namespace dotNetEventManagement.Models
         }
 
         // Constructor có tham số
-        public Order(int orderId, int userId, string fullName, string eventId, string eventName, decimal totalPrice, DateTime orderDate, string paymentStatus)
+        public Order(int orderId, int userId, string fullName, string eventId, string eventName, double totalPrice, DateTime orderDate, string paymentStatus)
         {
             OrderId = orderId;
             UserId = userId;

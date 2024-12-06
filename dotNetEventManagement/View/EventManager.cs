@@ -62,28 +62,30 @@ namespace dotNetEventManagement.View
                 string status = cmbTrangThai.Text;
                 double price = double.Parse(txtGiaVe.Text);
                 // Tạo đối tượng
-                Event newEvent = new Event {
+                Event newEvent = new Event
+                {
                     EventId = eventId,
                     EventName = eventName,
                     StartDate = startDate.ToString("dd-MM-yyyy"),
                     EndDate = endDate.ToString("dd-MM-yyyy"),
-                    Location = location, 
+                    Location = location,
                     Description = description,
                     Status = status,
                     Price = price
                 };
                 // Gọi phương thức AddEvent để thêm sự kiện vào cơ sở dữ liệu
-                eventcontroller.AddEvent(newEvent); 
+                eventcontroller.AddEvent(newEvent);
                 // Làm mới DataGridView để hiển thị sự kiện mới
                 LoadEvents();
                 // Xóa nội dung các điều khiển nhập liệu
                 clearText();
                 MessageBox.Show("Thêm sự kiện thành công!");
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi thêm sự kiện: {ex.Message}");
             }
-        }  
+        }
 
         private void dataGridViewEvents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -94,7 +96,7 @@ namespace dotNetEventManagement.View
                 txtDiaDiem.Text = dataGridViewEvents.Rows[r].Cells["Location"].Value.ToString();
                 txtMoTa.Text = dataGridViewEvents.Rows[r].Cells["Description"].Value.ToString();
                 dateTimeBatDau.Value = DateTime.Parse(dataGridViewEvents.Rows[r].Cells["StartDate"].Value.ToString());
-                dateTimeKetThuc.Value = DateTime.Parse(dataGridViewEvents.Rows[r].Cells["EndDate"].Value.ToString());                                                                                                                                                                                                                                                                                          
+                dateTimeKetThuc.Value = DateTime.Parse(dataGridViewEvents.Rows[r].Cells["EndDate"].Value.ToString());
                 cmbTrangThai.Text = dataGridViewEvents.Rows[r].Cells["Status"].Value.ToString();
                 txtGiaVe.Text = dataGridViewEvents.Rows[r].Cells["Price"].Value.ToString();
             }
@@ -148,20 +150,22 @@ namespace dotNetEventManagement.View
         {
             try
             { // Lấy EventId từ TextBox
-              string eventId = txtMa.Text;
+                string eventId = txtMa.Text;
                 // Kiểm tra nếu EventId rỗng
-                if (string.IsNullOrEmpty(eventId)) {
+                if (string.IsNullOrEmpty(eventId))
+                {
                     MessageBox.Show("Vui lòng chọn sự kiện để xóa.");
-                    return; 
+                    return;
                 }
                 // Gọi phương thức DeleteEvent để xóa sự kiện
                 eventcontroller.DeleteEvent(eventId);
                 // Làm mới DataGridView để hiển thị danh sách sự kiện mới nhất
                 LoadEvents();
                 // Xóa nội dung các điều khiển nhập liệu
-                clearText(); 
+                clearText();
                 MessageBox.Show("Xóa sự kiện thành công!");
-            } catch (Exception ex) 
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi xóa sự kiện: {ex.Message}");
             }
@@ -171,16 +175,48 @@ namespace dotNetEventManagement.View
         {
             try
             { // Lấy từ khóa tìm kiếm từ TextBox
-              string keyword = txtTimKiem.Text; 
+                string keyword = txtTimKiem.Text;
                 // Gọi phương thức SearchEvents để tìm kiếm sự kiện
-                List<Event> searchResults = eventcontroller.SearchEvents(keyword); 
+                List<Event> searchResults = eventcontroller.SearchEvents(keyword);
                 // Hiển thị kết quả tìm kiếm trên
                 dataGridViewEvents.DataSource = searchResults;
                 // Xóa nội dung các điều khiển nhập liệu
-                clearText(); 
-            } catch (Exception ex) {
+                clearText();
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Lỗi khi tìm kiếm sự kiện: {ex.Message}");
             }
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new OrderManager().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            new AccountManager().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            new AttendeeManager().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            new LogInView().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            new AdminHome().ShowDialog();
+            this.Close();
         }
     }
 }

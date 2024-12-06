@@ -8,9 +8,9 @@ namespace dotNetEventManagement.Models
 {
     public static class Session
     {
-        public static User CurrentUser { get; set; }
+        public static User ?CurrentUser { get; set; }
         private static List<Event> registeredEvents = new List<Event>();
-        private static Order order;
+        private static Order ?order;
 
         public static void clear()
         {

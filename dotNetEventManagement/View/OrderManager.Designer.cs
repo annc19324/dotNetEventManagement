@@ -55,14 +55,24 @@
             label9 = new Label();
             txtTimKiem = new TextBox();
             dataGridViewOrderManager = new DataGridView();
+            menuStrip1 = new MenuStrip();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            toolStripMenuItem7 = new ToolStripMenuItem();
+            toolStripMenuItem5 = new ToolStripMenuItem();
+            toolStripMenuItem6 = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripMenuItem();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrderManager).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(menuStrip1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
@@ -319,6 +329,64 @@
             dataGridViewOrderManager.TabIndex = 0;
             dataGridViewOrderManager.CellClick += dataGridViewOrderManager_CellClick;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem6 });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(846, 24);
+            menuStrip1.TabIndex = 2;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3, toolStripMenuItem7, toolStripMenuItem5 });
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(74, 20);
+            toolStripMenuItem1.Text = "Trang Chủ";
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(207, 22);
+            toolStripMenuItem2.Text = "Quản Lý Sự Kiện";
+            toolStripMenuItem2.Click += toolStripMenuItem2_Click;
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(207, 22);
+            toolStripMenuItem3.Text = "Quản Lý Tài Khoản";
+            toolStripMenuItem3.Click += toolStripMenuItem3_Click;
+            // 
+            // toolStripMenuItem7
+            // 
+            toolStripMenuItem7.Name = "toolStripMenuItem7";
+            toolStripMenuItem7.Size = new Size(207, 22);
+            toolStripMenuItem7.Text = "Quản Lý Người Tham Gia";
+            toolStripMenuItem7.Click += toolStripMenuItem7_Click;
+            // 
+            // toolStripMenuItem5
+            // 
+            toolStripMenuItem5.Name = "toolStripMenuItem5";
+            toolStripMenuItem5.Size = new Size(207, 22);
+            toolStripMenuItem5.Text = "Đăng Xuât";
+            toolStripMenuItem5.Click += toolStripMenuItem5_Click;
+            // 
+            // toolStripMenuItem6
+            // 
+            toolStripMenuItem6.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem4 });
+            toolStripMenuItem6.Name = "toolStripMenuItem6";
+            toolStripMenuItem6.Size = new Size(55, 20);
+            toolStripMenuItem6.Text = "Admin";
+            // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(180, 22);
+            toolStripMenuItem4.Text = "Trang Admin";
+            toolStripMenuItem4.Click += toolStripMenuItem4_Click;
+            // 
             // OrderManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -336,6 +404,8 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrderManager).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -368,5 +438,13 @@
         private DataGridView dataGridViewOrderManager;
         private Button btnThanhToan;
         private Button btnCapNhat;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem toolStripMenuItem7;
+        private ToolStripMenuItem toolStripMenuItem5;
+        private ToolStripMenuItem toolStripMenuItem6;
+        private ToolStripMenuItem toolStripMenuItem4;
     }
 }

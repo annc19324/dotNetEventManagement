@@ -13,7 +13,8 @@ namespace dotNetEventManagement.Controllers
     public class UserController
     {
         private readonly DbContext dbContext;
-
+        private  Connect dbConnect = new Connect();
+        
         public UserController()
         {
             dbContext = new DbContext();
@@ -226,6 +227,148 @@ namespace dotNetEventManagement.Controllers
                 }
             }
         }
+
+        public List<User> GetAllUser()
+        {
+            List<User> users = new List<User>();
+            string query = "SELECT * FROM Users";
+
+            using (SqlConnection conn = dbConnect.ConnectSQL())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+               
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        users.Add(new User
+                        {
+                            UserId = reader.IsDBNull(reader.GetOrdinal("UserId"))
+                                 ? 0
+                                 : reader.GetInt32(reader.GetOrdinal("UserId")),
+                            Username = reader.IsDBNull(reader.GetOrdinal("UserName"))
+                                   ? null
+                                   : reader.GetString(reader.GetOrdinal("UserName")),
+                            Fullname = reader.IsDBNull(reader.GetOrdinal("FullName"))
+                                   ? null
+                                   : reader.GetString(reader.GetOrdinal("FullName")),
+                            Password = reader.IsDBNull(reader.GetOrdinal("Password"))
+                                   ? null
+                                   : reader.GetString(reader.GetOrdinal("Password")),
+                            DateOfBirth = reader.IsDBNull(reader.GetOrdinal("DateOfBirth"))
+                                      ? DateTime.MinValue
+                                      : reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
+                            Mail = reader.IsDBNull(reader.GetOrdinal("Mail"))
+                               ? null
+                               : reader.GetString(reader.GetOrdinal("Mail")),
+                            Phone = reader.IsDBNull(reader.GetOrdinal("Phone"))
+                                ? null
+                                : reader.GetString(reader.GetOrdinal("Phone")),
+                            Role = reader.IsDBNull(reader.GetOrdinal("Role"))
+                               ? null
+                               : reader.GetString(reader.GetOrdinal("Role"))
+                        });
+                    }
+                }
+            }
+
+            return users;
+        }
+
+        public bool UpdateUserAccount(User user)
+        {
+            string query = "UPDATE Users SET Role = @Role WHERE UserId = @UserId";
+
+            using (SqlConnection conn = dbConnect.ConnectSQL())
+            {
+               
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    // Thêm tham số cho truy vấn
+                    cmd.Parameters.AddWithValue("@Role", user.Role);
+                    cmd.Parameters.AddWithValue("@UserId", user.UserId);
+
+                    // Thực hiện truy vấn và kiểm tra số hàng bị ảnh hưởng
+                    return cmd.ExecuteNonQuery() > 0; // Trả về true nếu cập nhật thành công
+                }
+            }
+        }
+        public bool DeleteUser(int userId)
+        {
+            string deleteAttendeesQuery = "DELETE FROM Attendees WHERE UserId = @UserId";
+            string deleteUserQuery = "DELETE FROM Users WHERE UserId = @UserId";
+
+            using (SqlConnection conn = dbConnect.ConnectSQL())
+            {
+              
+                using (SqlTransaction transaction = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        // Xóa từ bảng Attendees
+                        using (SqlCommand cmdAttendees = new SqlCommand(deleteAttendeesQuery, conn, transaction))
+                        {
+                            cmdAttendees.Parameters.AddWithValue("@UserId", userId);
+                            cmdAttendees.ExecuteNonQuery();
+                        }
+
+                        // Xóa từ bảng Users
+                        using (SqlCommand cmdUser = new SqlCommand(deleteUserQuery, conn, transaction))
+                        {
+                            cmdUser.Parameters.AddWithValue("@UserId", userId);
+                            cmdUser.ExecuteNonQuery();
+                        }
+
+                        // Xác nhận giao dịch
+                        transaction.Commit();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                        try
+                        {
+                            // Rollback nếu có lỗi
+                            transaction.Rollback();
+                        }
+                        catch (Exception rollbackEx)
+                        {
+                            Console.WriteLine("Rollback Error: " + rollbackEx.Message);
+                        }
+                        return false;
+                    }
+                }
+            }
+        }
+        public bool AddUserAccount(User user)
+        {
+            // Kiểm tra nếu username đã tồn tại
+            if (checkUsernameExist(user.Username))
+            {
+                return false;
+            }
+
+            string query = "INSERT INTO Users (Username, Fullname, Password, Role) VALUES (@Username, @Fullname, @Password, @Role)";
+
+            using (SqlConnection conn = dbConnect.ConnectSQL())
+            {
+                
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    // Thêm tham số cho truy vấn
+                    cmd.Parameters.AddWithValue("@Username", user.Username);
+                    cmd.Parameters.AddWithValue("@Fullname", user.Fullname);
+                    cmd.Parameters.AddWithValue("@Password", HashPassword(user.Password)); // Hàm hashPassword
+                    cmd.Parameters.AddWithValue("@Role", user.Role);
+
+                    // Thực hiện truy vấn và kiểm tra kết quả
+                    return cmd.ExecuteNonQuery() > 0; // Trả về true nếu thêm thành công
+                }
+            }
+        }
+
+
+
     }
 
 }

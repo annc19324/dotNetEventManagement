@@ -41,12 +41,13 @@ namespace dotNetEventManagement.View
         {
             try
             {
-                string keyword=txtTimKiem.Text;
+                string keyword = txtTimKiem.Text;
                 List<Order> orders = orderController.SearchOrder(keyword);
-                dataGridViewOrderManager.DataSource= orders;
+                dataGridViewOrderManager.DataSource = orders;
                 ClearText();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Lỗi khi tìm kiếm đơn hàng: {ex.Message}");
             }
 
@@ -62,7 +63,7 @@ namespace dotNetEventManagement.View
                 string eventName = txtEventName.Text;
                 DateTime dateorder = dateTimeOrder.Value;
                 string status = cmbStatus.Text;
-                decimal price = decimal.Parse(txtPrice.Text);
+                double price = double.Parse(txtPrice.Text);
 
                 Order order = new Order
                 {
@@ -170,7 +171,7 @@ namespace dotNetEventManagement.View
                     string eventName = txtEventName.Text;
                     DateTime dateorder = dateTimeOrder.Value;
                     string status = cmbStatus.Text;
-                    decimal price = decimal.Parse(txtPrice.Text);
+                    double price = double.Parse(txtPrice.Text);
 
                     Order order = new Order
                     {
@@ -223,10 +224,42 @@ namespace dotNetEventManagement.View
                 {
                     MessageBox.Show($"Chọn đơn hàng cần thanh toán!");
                 }
-            }catch (Exception ex) {
-                 MessageBox.Show($"Lỗi khi thanh toán đơn hàng: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi thanh toán đơn hàng: {ex.Message}");
 
             }
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new EventManager().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            new AccountManager().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            new AttendeeManager().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            new LogInView().ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            new AdminHome().ShowDialog();
+            this.Close();
         }
     }
 }
