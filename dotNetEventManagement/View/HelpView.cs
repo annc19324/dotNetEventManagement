@@ -18,6 +18,7 @@ namespace dotNetEventManagement.View
         {
             InitializeComponent();
             this.user = Session.CurrentUser;
+            lblFullname.Text = user.Fullname;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -40,7 +41,12 @@ namespace dotNetEventManagement.View
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            new UserHome(Session.CurrentUser).ShowDialog();
+            var newWindowState = new UserHome(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
     }

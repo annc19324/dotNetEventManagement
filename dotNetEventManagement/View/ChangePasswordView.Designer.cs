@@ -36,7 +36,7 @@
             btnChangePassword = new Button();
             btnUserHome = new Button();
             labelConfirmPasswordE = new Label();
-            labelNewPassword = new Label();
+            labelNewPasswordE = new Label();
             labelOldPasswordE = new Label();
             txtConfirmPassword = new TextBox();
             txtNewPassword = new TextBox();
@@ -89,17 +89,18 @@
             panelContainer.Anchor = AnchorStyles.None;
             panelContainer.BackColor = Color.Transparent;
             panelContainer.Controls.Add(panelHome);
-            panelContainer.Location = new Point(3, 76);
+            panelContainer.Location = new Point(10, 76);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(865, 473);
+            panelContainer.Size = new Size(858, 473);
             panelContainer.TabIndex = 2;
+            panelContainer.Click += panelContainer_Click;
             // 
             // panelHome
             // 
             panelHome.Anchor = AnchorStyles.None;
             panelHome.BackColor = Color.Transparent;
             panelHome.Controls.Add(panelContent);
-            panelHome.Location = new Point(16, 16);
+            panelHome.Location = new Point(13, 16);
             panelHome.Name = "panelHome";
             panelHome.Size = new Size(826, 441);
             panelHome.TabIndex = 0;
@@ -110,7 +111,7 @@
             panelContent.BackColor = Color.Transparent;
             panelContent.Controls.Add(panel3);
             panelContent.Controls.Add(labelConfirmPasswordE);
-            panelContent.Controls.Add(labelNewPassword);
+            panelContent.Controls.Add(labelNewPasswordE);
             panelContent.Controls.Add(labelOldPasswordE);
             panelContent.Controls.Add(txtConfirmPassword);
             panelContent.Controls.Add(txtNewPassword);
@@ -164,14 +165,14 @@
             labelConfirmPasswordE.Size = new Size(0, 20);
             labelConfirmPasswordE.TabIndex = 15;
             // 
-            // labelNewPassword
+            // labelNewPasswordE
             // 
-            labelNewPassword.AutoSize = true;
-            labelNewPassword.ForeColor = Color.Red;
-            labelNewPassword.Location = new Point(238, 209);
-            labelNewPassword.Name = "labelNewPassword";
-            labelNewPassword.Size = new Size(0, 20);
-            labelNewPassword.TabIndex = 12;
+            labelNewPasswordE.AutoSize = true;
+            labelNewPasswordE.ForeColor = Color.Red;
+            labelNewPasswordE.Location = new Point(238, 209);
+            labelNewPasswordE.Name = "labelNewPasswordE";
+            labelNewPasswordE.Size = new Size(0, 20);
+            labelNewPasswordE.TabIndex = 12;
             // 
             // labelOldPasswordE
             // 
@@ -296,6 +297,7 @@
             labelLogOut.Size = new Size(101, 28);
             labelLogOut.TabIndex = 6;
             labelLogOut.Text = "Đăng xuất";
+            labelLogOut.Click += labelLogOut_Click;
             // 
             // labelClose
             // 
@@ -307,6 +309,7 @@
             labelClose.Size = new Size(54, 46);
             labelClose.TabIndex = 0;
             labelClose.Text = "✕";
+            labelClose.Click += labelClose_Click;
             // 
             // labelChangePassword
             // 
@@ -317,6 +320,7 @@
             labelChangePassword.Size = new Size(129, 28);
             labelChangePassword.TabIndex = 5;
             labelChangePassword.Text = "Đổi mật khẩu";
+            labelChangePassword.Click += labelChangePassword_Click;
             // 
             // labelHelp
             // 
@@ -327,6 +331,7 @@
             labelHelp.Size = new Size(84, 28);
             labelHelp.TabIndex = 4;
             labelHelp.Text = "Trợ giúp";
+            labelHelp.Click += labelHelp_Click;
             // 
             // labelAccountInformation
             // 
@@ -337,6 +342,7 @@
             labelAccountInformation.Size = new Size(182, 28);
             labelAccountInformation.TabIndex = 3;
             labelAccountInformation.Text = "Thông tin tài khoản";
+            labelAccountInformation.Click += labelAccountInformation_Click;
             // 
             // labelRegisteredEvent
             // 
@@ -347,6 +353,7 @@
             labelRegisteredEvent.Size = new Size(178, 28);
             labelRegisteredEvent.TabIndex = 2;
             labelRegisteredEvent.Text = "Sự kiện đã đăng ký";
+            labelRegisteredEvent.Click += labelRegisteredEvent_Click;
             // 
             // labelEventList
             // 
@@ -357,6 +364,7 @@
             labelEventList.Size = new Size(167, 28);
             labelEventList.TabIndex = 1;
             labelEventList.Text = "Danh sách sự kiện";
+            labelEventList.Click += labelEventList_Click;
             // 
             // labelHome
             // 
@@ -367,6 +375,7 @@
             labelHome.Size = new Size(96, 28);
             labelHome.TabIndex = 0;
             labelHome.Text = "Trang chủ";
+            labelHome.Click += labelHome_Click;
             // 
             // panelHeader
             // 
@@ -389,6 +398,7 @@
             lblMenu.Size = new Size(56, 59);
             lblMenu.TabIndex = 0;
             lblMenu.Text = "≡";
+            lblMenu.Click += lblMenu_Click;
             // 
             // lblFullname
             // 
@@ -408,7 +418,10 @@
             ClientSize = new Size(897, 586);
             Controls.Add(panelMain);
             Name = "ChangePasswordView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ChangePasswordView";
+            Load += ChangePasswordView_Load;
+            Resize += ChangePasswordView_Resize;
             panelMain.ResumeLayout(false);
             panelContainer.ResumeLayout(false);
             panelHome.ResumeLayout(false);
@@ -433,7 +446,7 @@
         private Panel panelHome;
         private Panel panelContent;
         private Label labelConfirmPasswordE;
-        private Label labelNewPassword;
+        private Label labelNewPasswordE;
         private Label labelOldPasswordE;
         private TextBox txtConfirmPassword;
         private TextBox txtNewPassword;

@@ -93,12 +93,23 @@ namespace dotNetEventManagement.View
             if (user.Role.Equals("admin"))
             {
                 this.Hide();
-                new EventManager().ShowDialog();
+                var newWindowState = new EventManager();
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    newWindowState.WindowState = FormWindowState.Maximized;
+                }
+                newWindowState.ShowDialog();
                 this.Close();
-            }else if (user.Role.Equals("user"))
+            }
+            else if (user.Role.Equals("user"))
             {
                 this.Hide();
-                new UserHome(Session.CurrentUser).ShowDialog();
+                var newWindowState = new UserHome(Session.CurrentUser);
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    newWindowState.WindowState = FormWindowState.Maximized;
+                }
+                newWindowState.ShowDialog();
                 this.Close();
             }
 
@@ -108,7 +119,12 @@ namespace dotNetEventManagement.View
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new SignUpView().ShowDialog();
+            var newWindowState = new SignUpView();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
 
         }
@@ -116,7 +132,12 @@ namespace dotNetEventManagement.View
         private void lblForgetPassword_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new ForgetPassword().ShowDialog();
+            var newWindowState = new ForgetPassword();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
     }
