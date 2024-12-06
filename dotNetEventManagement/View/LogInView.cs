@@ -93,7 +93,7 @@ namespace dotNetEventManagement.View
             if (user.Role.Equals("admin"))
             {
                 this.Hide();
-                new AdminHome().ShowDialog();
+                new EventManager().ShowDialog();
                 this.Close();
             }else if (user.Role.Equals("user"))
             {

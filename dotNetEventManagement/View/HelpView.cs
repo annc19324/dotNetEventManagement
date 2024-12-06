@@ -19,5 +19,29 @@ namespace dotNetEventManagement.View
             InitializeComponent();
             this.user = Session.CurrentUser;
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "https://www.facebook.com/hanaviet");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi mở liên kết: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UserHome(Session.CurrentUser).ShowDialog();
+            this.Close();
+        }
     }
 }

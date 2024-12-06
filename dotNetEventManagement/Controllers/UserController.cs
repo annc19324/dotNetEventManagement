@@ -187,6 +187,45 @@ namespace dotNetEventManagement.Controllers
                 }
             }
         }
+
+        public bool changeInformation(int userid, string username, string fullname, DateTime dateOfBirth, string mail, string phone)
+        {
+            string query = "update users set username = @username, fullname = @fullname, dateofbirth = @dateofbirth, mail = @mail, phone=@phone where userid = @userid";
+            using (SqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@fullname", fullname);
+                    cmd.Parameters.AddWithValue("@dateofbirth", dateOfBirth);
+                    cmd.Parameters.AddWithValue("@mail", mail);
+                    cmd.Parameters.AddWithValue("@phone", phone);
+                    cmd.Parameters.AddWithValue("@userid", userid);
+                    int count = cmd.ExecuteNonQuery();
+                    return count > 0;
+                }
+            }
+        }
+
+        public bool changeNewPassword(int userid, string oldPassword, string newPassword)
+        {
+            string query = "update users set password = @newpassword where userid = @userId and password = @oldpassword";
+            string oldHashedPassword = HashPassword(oldPassword);
+            string newHashedPassword = HashPassword(newPassword);
+            using (SqlConnection conn = dbContext.GetConnection())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@userId", userid);
+                    cmd.Parameters.AddWithValue("@oldpassword", oldHashedPassword);
+                    cmd.Parameters.AddWithValue("@newpassword", newHashedPassword);
+                    int count = cmd.ExecuteNonQuery();
+                    return count > 0;
+                }
+            }
+        }
     }
 
 }

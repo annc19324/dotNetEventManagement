@@ -95,7 +95,6 @@ namespace dotNetEventManagement.Controllers
                 cmd.Parameters.AddWithValue("@PaymentStatus", paymentStatus);
                 cmd.Parameters.AddWithValue("@OrderId", orderId);
 
-                
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
@@ -193,7 +192,6 @@ namespace dotNetEventManagement.Controllers
             }
         }
 
-        // Kiểm tra xem EventId có tồn tại hay không
         public bool IsEventIdExists(string eventId)
         {
             string query = "SELECT 1 FROM Events WHERE EventId = @EventId";
@@ -209,7 +207,6 @@ namespace dotNetEventManagement.Controllers
             }
         }
 
-        // Xóa đơn hàng theo OrderId
         public bool DeleteOrder(int orderId)
         {
             string query = "DELETE FROM Orders WHERE OrderId = @OrderId";
@@ -222,21 +219,22 @@ namespace dotNetEventManagement.Controllers
             }
         }
 
-        // Thanh toán hóa đơn
         public bool PayBill(int orderId)
         {
-            string query = "UPDATE Orders SET PaymentStatus = @PaymentStatus WHERE OrderId = @OrderId";
+            string query = "select paymentstatus from Orders WHERE OrderId = @OrderId";
             using (SqlConnection conn = dbConnect.ConnectSQL())
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@PaymentStatus", "Đã thanh toán");
                 cmd.Parameters.AddWithValue("@OrderId", orderId);
-               
-                return cmd.ExecuteNonQuery() > 0;
+                string? status = cmd.ExecuteScalar().ToString();
+                if(status == "Đã thanh toán")
+                {
+                    return false;
+                }
+                return true;
             }
         }
 
-        // Lấy đơn hàng theo UserId và EventId
         public Order GetOrderByUserIdAndEventId(int userId, string eventId)
         {
             string query = "SELECT * FROM Orders WHERE UserId = @UserId AND EventId = @EventId";

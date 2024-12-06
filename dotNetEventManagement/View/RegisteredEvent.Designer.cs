@@ -46,15 +46,15 @@
             panelHome = new Panel();
             panelContent = new Panel();
             panel2 = new Panel();
+            panel4 = new Panel();
+            dgvRegisteredEventList = new DataGridView();
+            btnUserHome = new Button();
+            btnShowBill = new Button();
+            btnCancelEvent = new Button();
             panel5 = new Panel();
             btnRefresh = new Button();
             btnSearch = new Button();
             txtSearch = new TextBox();
-            panel4 = new Panel();
-            btnUserHome = new Button();
-            btnShowBill = new Button();
-            btnCancelEvent = new Button();
-            dgvRegisteredEventList = new DataGridView();
             panel3 = new Panel();
             label1 = new Label();
             panelMain.SuspendLayout();
@@ -64,9 +64,9 @@
             panelHome.SuspendLayout();
             panelContent.SuspendLayout();
             panel2.SuspendLayout();
-            panel5.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRegisteredEventList).BeginInit();
+            panel5.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -267,6 +267,64 @@
             panel2.Size = new Size(1167, 512);
             panel2.TabIndex = 2;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(dgvRegisteredEventList);
+            panel4.Controls.Add(btnUserHome);
+            panel4.Controls.Add(btnShowBill);
+            panel4.Controls.Add(btnCancelEvent);
+            panel4.Location = new Point(3, 119);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1161, 379);
+            panel4.TabIndex = 2;
+            // 
+            // dgvRegisteredEventList
+            // 
+            dgvRegisteredEventList.AllowUserToAddRows = false;
+            dgvRegisteredEventList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRegisteredEventList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRegisteredEventList.Location = new Point(3, 19);
+            dgvRegisteredEventList.MultiSelect = false;
+            dgvRegisteredEventList.Name = "dgvRegisteredEventList";
+            dgvRegisteredEventList.ReadOnly = true;
+            dgvRegisteredEventList.RowHeadersWidth = 51;
+            dgvRegisteredEventList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRegisteredEventList.Size = new Size(1155, 304);
+            dgvRegisteredEventList.TabIndex = 0;
+            // 
+            // btnUserHome
+            // 
+            btnUserHome.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUserHome.Location = new Point(374, 329);
+            btnUserHome.Name = "btnUserHome";
+            btnUserHome.Size = new Size(249, 47);
+            btnUserHome.TabIndex = 5;
+            btnUserHome.Text = "Trang chủ";
+            btnUserHome.UseVisualStyleBackColor = true;
+            btnUserHome.Click += btnUserHome_Click;
+            // 
+            // btnShowBill
+            // 
+            btnShowBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnShowBill.Location = new Point(914, 329);
+            btnShowBill.Name = "btnShowBill";
+            btnShowBill.Size = new Size(244, 47);
+            btnShowBill.TabIndex = 2;
+            btnShowBill.Text = "Thanh toán hóa đơn";
+            btnShowBill.UseVisualStyleBackColor = true;
+            btnShowBill.Click += btnShowBill_Click;
+            // 
+            // btnCancelEvent
+            // 
+            btnCancelEvent.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancelEvent.Location = new Point(629, 329);
+            btnCancelEvent.Name = "btnCancelEvent";
+            btnCancelEvent.Size = new Size(279, 47);
+            btnCancelEvent.TabIndex = 4;
+            btnCancelEvent.Text = "Hủy sự kiện";
+            btnCancelEvent.UseVisualStyleBackColor = true;
+            btnCancelEvent.Click += btnCancelEvent_Click;
+            // 
             // panel5
             // 
             panel5.Controls.Add(btnRefresh);
@@ -307,64 +365,6 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(884, 43);
             txtSearch.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(dgvRegisteredEventList);
-            panel4.Controls.Add(btnUserHome);
-            panel4.Controls.Add(btnShowBill);
-            panel4.Controls.Add(btnCancelEvent);
-            panel4.Location = new Point(3, 119);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1161, 379);
-            panel4.TabIndex = 2;
-            // 
-            // btnUserHome
-            // 
-            btnUserHome.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUserHome.Location = new Point(374, 329);
-            btnUserHome.Name = "btnUserHome";
-            btnUserHome.Size = new Size(249, 47);
-            btnUserHome.TabIndex = 5;
-            btnUserHome.Text = "Trang chủ";
-            btnUserHome.UseVisualStyleBackColor = true;
-            btnUserHome.Click += btnUserHome_Click;
-            // 
-            // btnShowBill
-            // 
-            btnShowBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnShowBill.Location = new Point(914, 329);
-            btnShowBill.Name = "btnShowBill";
-            btnShowBill.Size = new Size(244, 47);
-            btnShowBill.TabIndex = 2;
-            btnShowBill.Text = "Thanh toán hóa đơn";
-            btnShowBill.UseVisualStyleBackColor = true;
-            btnShowBill.Click += btnShowBill_Click;
-            // 
-            // btnCancelEvent
-            // 
-            btnCancelEvent.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelEvent.Location = new Point(629, 329);
-            btnCancelEvent.Name = "btnCancelEvent";
-            btnCancelEvent.Size = new Size(279, 47);
-            btnCancelEvent.TabIndex = 4;
-            btnCancelEvent.Text = "Hủy sự kiện";
-            btnCancelEvent.UseVisualStyleBackColor = true;
-            btnCancelEvent.Click += btnCancelEvent_Click;
-            // 
-            // dgvRegisteredEventList
-            // 
-            dgvRegisteredEventList.AllowUserToAddRows = false;
-            dgvRegisteredEventList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvRegisteredEventList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRegisteredEventList.Location = new Point(3, 19);
-            dgvRegisteredEventList.MultiSelect = false;
-            dgvRegisteredEventList.Name = "dgvRegisteredEventList";
-            dgvRegisteredEventList.ReadOnly = true;
-            dgvRegisteredEventList.RowHeadersWidth = 51;
-            dgvRegisteredEventList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRegisteredEventList.Size = new Size(1155, 304);
-            dgvRegisteredEventList.TabIndex = 0;
             // 
             // panel3
             // 
@@ -407,10 +407,10 @@
             panelHome.ResumeLayout(false);
             panelContent.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRegisteredEventList).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);

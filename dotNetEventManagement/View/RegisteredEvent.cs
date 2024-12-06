@@ -57,7 +57,7 @@ namespace dotNetEventManagement.View
             }
 
             string? eventId = dgvRegisteredEventList.Rows[selectedRow].Cells["EventId"].Value.ToString();
-            int userId = user.UserId; 
+            int userId = user.UserId;
 
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn hủy đăng ký sự kiện này?",
                                                   "Xác nhận hủy đăng ký",
@@ -66,11 +66,12 @@ namespace dotNetEventManagement.View
 
             if (result == DialogResult.OK)
             {
-                bool isCancelled = eventController.CancelRegistration(userId, eventId : "none");
+                bool isCancelled = eventController.CancelRegistration(userId, eventId);
 
                 if (isCancelled)
                 {
                     dgvRegisteredEventList.Rows.RemoveAt(selectedRow);
+                    Session.removeRegisteredEventById(eventId);
                     MessageBox.Show("Đã hủy đăng ký sự kiện thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -91,10 +92,7 @@ namespace dotNetEventManagement.View
                 return;
             }
 
-            // Lấy UserId từ Session
-            int userId = Session.getUser().UserId;
-
-            // Lấy EventId từ cột trong DataGridView
+            int userId = user.UserId;
             string? eventId = dgvRegisteredEventList.Rows[selectedRow].Cells[0].Value.ToString();
 
             // Tìm đơn hàng trong cơ sở dữ liệu
@@ -103,14 +101,7 @@ namespace dotNetEventManagement.View
 
             if (order != null)
             {
-                if (order.PaymentStatus.Equals("Đã thanh toán", StringComparison.OrdinalIgnoreCase))
-                {
-                    MessageBox.Show("Sự kiện này đã được thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    new PayBillView(order).ShowDialog();
-                }
+                new PayBillView(order).ShowDialog();
             }
             else
             {
@@ -239,7 +230,8 @@ namespace dotNetEventManagement.View
 
         private void panelContainer_Click(object sender, EventArgs e)
         {
-            if (isOpeningMenu) { 
+            if (isOpeningMenu)
+            {
                 CloseMenu();
             }
         }

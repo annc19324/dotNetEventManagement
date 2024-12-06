@@ -19,11 +19,11 @@ namespace dotNetEventManagement.Models
 
         public static void setUser(User user)
         {
-            //user = CurrentUser;
             CurrentUser = user;
 
         }
-        public static User getUser() { 
+        public static User getUser()
+        {
             return CurrentUser;
         }
         public static void AddRegisteredEvent(Event eventItem)
@@ -34,6 +34,16 @@ namespace dotNetEventManagement.Models
         public static List<Event> GetRegisteredEvents()
         {
             return registeredEvents;
+        }
+
+        public static void addRegisteredEvent(Event eventItem)
+        {
+            registeredEvents.Add(eventItem);
+        }
+
+        public static void removeRegisteredEventById(String eventId)
+        {
+            registeredEvents.RemoveAll(e => e.EventId == eventId);
         }
     }
 }

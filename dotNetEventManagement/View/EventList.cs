@@ -83,7 +83,7 @@ namespace dotNetEventManagement.View
         private void labelHelp_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new UserHome(Session.CurrentUser).ShowDialog();
+            new HelpView(Session.CurrentUser).ShowDialog();
             this.Close();
         }
 

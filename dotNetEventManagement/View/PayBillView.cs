@@ -38,15 +38,29 @@ namespace dotNetEventManagement.View
             int orderId = int.Parse(labelOrderId.Text);
             string fullname = labelFullname.Text;
             string eventId = labelEventId.Text;
-            bool isUpdateBill = orderController.PayBill(orderId);
-            if (isUpdateBill) {
-                MessageBox.Show("Thanh toán hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+            bool paid = orderController.PayBill(orderId);
+            if (paid)
+            {
+                bool isUpdateBill = orderController.UpdatePaymentStatus(orderId, "Đã thanh toán");
+                if (isUpdateBill)
+                {
+                    MessageBox.Show("Thanh toán hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("bạn đã thanh toán hóa đơn này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                MessageBox.Show("có lỗi khi thanh toán", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show("bạn đã thanh toán hóa đơn này! Đóng hóa đơn", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                }
             }
+
         }
 
         private void btnPayLater_Click(object sender, EventArgs e)
