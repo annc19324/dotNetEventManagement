@@ -15,7 +15,7 @@ namespace dotNetEventManagement.View
     {
         private User user;
         private bool isOpeningMenu = false;
-        private const int menuWidth = 200;
+        private const int menuWidth = 260;
         public UserHome(User user)
         {
             InitializeComponent();
@@ -112,8 +112,8 @@ namespace dotNetEventManagement.View
             panelContainer.Height = panelMain.Height - panelHeader.Height;
             panelContainer.Width = panelMain.Width;
             pnlSlideMenu.Height = panelMain.Height;
-            //panelHome.Width = panelContainer.Width;
-            //panelHome.Height = panelContainer.Height;
+            panelHome.Width = panelContainer.Width;
+            panelHome.Height = panelContainer.Height;
 
         }
 
@@ -184,15 +184,114 @@ namespace dotNetEventManagement.View
         private void btnEventList_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new EventList(Session.CurrentUser).ShowDialog();
+            var newWindowState = new EventList(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void btnRegisteredEvent_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new RegisteredEvent(Session.CurrentUser).ShowDialog();
+            var newWindowState = new RegisteredEvent(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
+        }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            CloseMenu();
+        }
+
+        private void labelHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newWindowState = new UserHome(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
+            this.Close();
+        }
+
+        private void labelEventList_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newWindowState = new EventList(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
+            this.Close();
+        }
+
+        private void labelRegisteredEvent_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newWindowState = new RegisteredEvent(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
+            this.Close();
+        }
+
+        private void labelAccountInformation_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newWindowState = new AccountInformation(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
+            this.Close();
+        }
+
+        private void labelHelp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newWindowState = new HelpView(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
+            this.Close();
+        }
+
+        private void labelChangePassword_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newWindowState = new ChangePasswordView(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
+            this.Close();
+        }
+
+        private void labelLogOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("bạn có chắc muốn đăng xuất?", "xác nhận đăng xuất", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                this.Hide();
+                Session.clear();
+                new LogInView().ShowDialog();
+                this.Close();
+            }
         }
     }
 

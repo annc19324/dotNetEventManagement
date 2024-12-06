@@ -40,7 +40,12 @@ namespace dotNetEventManagement.View
         private void btnBackToLogIn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LogInView().ShowDialog();
+            var newWindowState = new LogInView();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
@@ -110,6 +115,7 @@ namespace dotNetEventManagement.View
                 lblDateOfBirthE.Text = "trên 16 tuổi mới được đăng ký!";
                 foundE = true;
             }
+
             if (string.IsNullOrEmpty(username))
             {
                 lblUsernameE.Text = "tên người dùng không được để trống"!;
@@ -131,17 +137,17 @@ namespace dotNetEventManagement.View
                 lblFullNameE.Text = "tên đầy đủ không được để trống!";
                 foundE = true;
             }
+            else if (fullname.Length < 6)
+            {
+                lblUsernameE.Text = "họ tên người dùng chứa ít nhất 6 kí tự!";
+                foundE = true;
+            }
             else if (!Regex.IsMatch(fullname, @"^[a-zA-Z\u00C0-\u1EF9]+(?: [a-zA-Z\u00C0-\u1EF9]+)*$"))
             {
                 lblFullNameE.Text = "tên đầy đủ chỉ được chứa a-z, A-Z và khoảng trắng";
                 foundE = true;
             }
 
-            if (string.IsNullOrEmpty(username))
-            {
-                lblUsernameE.Text = "tên người dùng không được để trống"!;
-                foundE = true;
-            }
 
             if (string.IsNullOrEmpty(password))
             {
@@ -205,7 +211,12 @@ namespace dotNetEventManagement.View
             {
                 MessageBox.Show("Đăng ký tài khoản " + user.Username + " thành công!");
                 this.Hide();
-                new LogInView().ShowDialog();
+                var newWindowState = new LogInView();
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    newWindowState.WindowState = FormWindowState.Maximized;
+                }
+                newWindowState.ShowDialog();
                 this.Close();
             }
             else

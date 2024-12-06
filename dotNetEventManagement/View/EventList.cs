@@ -55,7 +55,12 @@ namespace dotNetEventManagement.View
         private void labelRegisteredEvent_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new RegisteredEvent(Session.CurrentUser).ShowDialog();
+            var newWindowState = new RegisteredEvent(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
@@ -105,20 +110,6 @@ namespace dotNetEventManagement.View
                 this.Close();
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         //them moi
@@ -211,8 +202,6 @@ namespace dotNetEventManagement.View
 
         private void EventList_Load(object sender, EventArgs e)
         {
-            txtSearch.Focus();
-            dgvEventList.CurrentCell = null;
             panelContainerCenter();
             lblHeaderCenter();
             panelHomeCenter();
@@ -335,14 +324,24 @@ namespace dotNetEventManagement.View
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new UserHome(Session.CurrentUser).ShowDialog();
+            var newWindowState = new UserHome(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void btnShowDetail_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new RegisteredEvent(Session.CurrentUser).ShowDialog();
+            var newWindowState = new RegisteredEvent(Session.CurrentUser);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
@@ -350,7 +349,7 @@ namespace dotNetEventManagement.View
         {
             txtSearch.Focus();
             dgvEventList.CurrentCell = null;
-   
+
         }
 
     }

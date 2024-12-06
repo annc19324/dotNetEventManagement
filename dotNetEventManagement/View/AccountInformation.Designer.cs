@@ -34,10 +34,10 @@
             panelContent = new Panel();
             dtpDateOfBirth = new DateTimePicker();
             labelPhoneE = new Label();
-            label1MailE = new Label();
+            labelMailE = new Label();
             labelDateOfBirthE = new Label();
             labelFullnameE = new Label();
-            labelUẻnameE = new Label();
+            labelUsernameE = new Label();
             txtPhone = new TextBox();
             txtMail = new TextBox();
             txtFullname = new TextBox();
@@ -85,9 +85,9 @@
             panelMain.Controls.Add(panelContainer);
             panelMain.Controls.Add(pnlSlideMenu);
             panelMain.Controls.Add(panelHeader);
-            panelMain.Location = new Point(12, 19);
+            panelMain.Location = new Point(12, 50);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(874, 543);
+            panelMain.Size = new Size(874, 572);
             panelMain.TabIndex = 2;
             // 
             // panelContainer
@@ -95,19 +95,20 @@
             panelContainer.Anchor = AnchorStyles.None;
             panelContainer.BackColor = Color.Transparent;
             panelContainer.Controls.Add(panelHome);
-            panelContainer.Location = new Point(0, 73);
+            panelContainer.Location = new Point(3, 67);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(871, 467);
+            panelContainer.Size = new Size(868, 433);
             panelContainer.TabIndex = 2;
+            panelContainer.Click += panelContainer_Click;
             // 
             // panelHome
             // 
             panelHome.Anchor = AnchorStyles.None;
             panelHome.BackColor = Color.Transparent;
             panelHome.Controls.Add(panelContent);
-            panelHome.Location = new Point(3, 3);
+            panelHome.Location = new Point(7, 13);
             panelHome.Name = "panelHome";
-            panelHome.Size = new Size(865, 461);
+            panelHome.Size = new Size(858, 410);
             panelHome.TabIndex = 0;
             // 
             // panelContent
@@ -116,10 +117,10 @@
             panelContent.BackColor = Color.Transparent;
             panelContent.Controls.Add(dtpDateOfBirth);
             panelContent.Controls.Add(labelPhoneE);
-            panelContent.Controls.Add(label1MailE);
+            panelContent.Controls.Add(labelMailE);
             panelContent.Controls.Add(labelDateOfBirthE);
             panelContent.Controls.Add(labelFullnameE);
-            panelContent.Controls.Add(labelUẻnameE);
+            panelContent.Controls.Add(labelUsernameE);
             panelContent.Controls.Add(txtPhone);
             panelContent.Controls.Add(txtMail);
             panelContent.Controls.Add(txtFullname);
@@ -130,7 +131,7 @@
             panelContent.Controls.Add(label3);
             panelContent.Controls.Add(label2);
             panelContent.Controls.Add(panel1);
-            panelContent.Location = new Point(48, 19);
+            panelContent.Location = new Point(39, -6);
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(783, 423);
             panelContent.TabIndex = 0;
@@ -152,14 +153,14 @@
             labelPhoneE.Size = new Size(0, 20);
             labelPhoneE.TabIndex = 15;
             // 
-            // label1MailE
+            // labelMailE
             // 
-            label1MailE.AutoSize = true;
-            label1MailE.ForeColor = Color.Red;
-            label1MailE.Location = new Point(238, 330);
-            label1MailE.Name = "label1MailE";
-            label1MailE.Size = new Size(0, 20);
-            label1MailE.TabIndex = 14;
+            labelMailE.AutoSize = true;
+            labelMailE.ForeColor = Color.Red;
+            labelMailE.Location = new Point(238, 330);
+            labelMailE.Name = "labelMailE";
+            labelMailE.Size = new Size(0, 20);
+            labelMailE.TabIndex = 14;
             // 
             // labelDateOfBirthE
             // 
@@ -179,14 +180,14 @@
             labelFullnameE.Size = new Size(0, 20);
             labelFullnameE.TabIndex = 12;
             // 
-            // labelUẻnameE
+            // labelUsernameE
             // 
-            labelUẻnameE.AutoSize = true;
-            labelUẻnameE.ForeColor = Color.Red;
-            labelUẻnameE.Location = new Point(238, 149);
-            labelUẻnameE.Name = "labelUẻnameE";
-            labelUẻnameE.Size = new Size(0, 20);
-            labelUẻnameE.TabIndex = 11;
+            labelUsernameE.AutoSize = true;
+            labelUsernameE.ForeColor = Color.Red;
+            labelUsernameE.Location = new Point(238, 149);
+            labelUsernameE.Name = "labelUsernameE";
+            labelUsernameE.Size = new Size(0, 20);
+            labelUsernameE.TabIndex = 11;
             // 
             // txtPhone
             // 
@@ -348,7 +349,7 @@
             panelMenu.Controls.Add(labelHome);
             panelMenu.Location = new Point(7, 5);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(250, 592);
+            panelMenu.Size = new Size(268, 592);
             panelMenu.TabIndex = 1;
             // 
             // labelLogOut
@@ -360,6 +361,7 @@
             labelLogOut.Size = new Size(101, 28);
             labelLogOut.TabIndex = 6;
             labelLogOut.Text = "Đăng xuất";
+            labelLogOut.Click += labelLogOut_Click;
             // 
             // labelClose
             // 
@@ -371,6 +373,7 @@
             labelClose.Size = new Size(54, 46);
             labelClose.TabIndex = 0;
             labelClose.Text = "✕";
+            labelClose.Click += labelClose_Click;
             // 
             // labelChangePassword
             // 
@@ -381,6 +384,7 @@
             labelChangePassword.Size = new Size(129, 28);
             labelChangePassword.TabIndex = 5;
             labelChangePassword.Text = "Đổi mật khẩu";
+            labelChangePassword.Click += labelChangePassword_Click;
             // 
             // labelHelp
             // 
@@ -391,6 +395,7 @@
             labelHelp.Size = new Size(84, 28);
             labelHelp.TabIndex = 4;
             labelHelp.Text = "Trợ giúp";
+            labelHelp.Click += labelHelp_Click;
             // 
             // labelAccountInformation
             // 
@@ -401,6 +406,7 @@
             labelAccountInformation.Size = new Size(182, 28);
             labelAccountInformation.TabIndex = 3;
             labelAccountInformation.Text = "Thông tin tài khoản";
+            labelAccountInformation.Click += labelAccountInformation_Click;
             // 
             // labelRegisteredEvent
             // 
@@ -411,6 +417,7 @@
             labelRegisteredEvent.Size = new Size(178, 28);
             labelRegisteredEvent.TabIndex = 2;
             labelRegisteredEvent.Text = "Sự kiện đã đăng ký";
+            labelRegisteredEvent.Click += labelRegisteredEvent_Click;
             // 
             // labelEventList
             // 
@@ -421,6 +428,7 @@
             labelEventList.Size = new Size(167, 28);
             labelEventList.TabIndex = 1;
             labelEventList.Text = "Danh sách sự kiện";
+            labelEventList.Click += labelEventList_Click;
             // 
             // labelHome
             // 
@@ -431,6 +439,7 @@
             labelHome.Size = new Size(96, 28);
             labelHome.TabIndex = 0;
             labelHome.Text = "Trang chủ";
+            labelHome.Click += labelHome_Click;
             // 
             // panelHeader
             // 
@@ -453,6 +462,7 @@
             lblMenu.Size = new Size(56, 59);
             lblMenu.TabIndex = 0;
             lblMenu.Text = "≡";
+            lblMenu.Click += lblMenu_Click;
             // 
             // lblFullname
             // 
@@ -468,12 +478,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(898, 574);
+            ClientSize = new Size(898, 634);
             Controls.Add(panelMain);
             Name = "AccountInformation";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AccountInformation";
             Load += AccountInformation_Load;
+            Resize += AccountInformation_Resize;
             panelMain.ResumeLayout(false);
             panelContainer.ResumeLayout(false);
             panelHome.ResumeLayout(false);
@@ -522,10 +533,10 @@
         private Label label3;
         private Label label2;
         private Label labelPhoneE;
-        private Label label1MailE;
+        private Label labelMailE;
         private Label labelDateOfBirthE;
         private Label labelFullnameE;
-        private Label labelUẻnameE;
+        private Label labelUsernameE;
         private TextBox txtPhone;
         private TextBox txtMail;
         private TextBox txtFullname;

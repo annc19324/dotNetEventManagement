@@ -84,7 +84,7 @@
             // lblForgetPassword
             // 
             lblForgetPassword.AutoSize = true;
-            lblForgetPassword.Location = new Point(401, 215);
+            lblForgetPassword.Location = new Point(401, 238);
             lblForgetPassword.Name = "lblForgetPassword";
             lblForgetPassword.Size = new Size(116, 20);
             lblForgetPassword.TabIndex = 8;
@@ -94,7 +94,7 @@
             // btnSignUp
             // 
             btnSignUp.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnSignUp.Location = new Point(307, 154);
+            btnSignUp.Location = new Point(307, 177);
             btnSignUp.Name = "btnSignUp";
             btnSignUp.Size = new Size(210, 46);
             btnSignUp.TabIndex = 7;
@@ -105,7 +105,7 @@
             // btnLogIn
             // 
             btnLogIn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnLogIn.Location = new Point(47, 154);
+            btnLogIn.Location = new Point(47, 177);
             btnLogIn.Name = "btnLogIn";
             btnLogIn.Size = new Size(208, 46);
             btnLogIn.TabIndex = 6;
@@ -117,7 +117,7 @@
             // 
             lblPasswordE.AutoSize = true;
             lblPasswordE.ForeColor = Color.Red;
-            lblPasswordE.Location = new Point(182, 131);
+            lblPasswordE.Location = new Point(182, 154);
             lblPasswordE.Name = "lblPasswordE";
             lblPasswordE.Size = new Size(0, 20);
             lblPasswordE.TabIndex = 5;
@@ -125,7 +125,7 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            txtPassword.Location = new Point(182, 90);
+            txtPassword.Location = new Point(182, 113);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '•';
             txtPassword.Size = new Size(335, 38);
@@ -134,7 +134,7 @@
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            txtUsername.Location = new Point(182, 26);
+            txtUsername.Location = new Point(182, 49);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(335, 38);
             txtUsername.TabIndex = 3;
@@ -143,7 +143,7 @@
             // 
             lblUsernameE.AutoSize = true;
             lblUsernameE.ForeColor = Color.Red;
-            lblUsernameE.Location = new Point(182, 67);
+            lblUsernameE.Location = new Point(182, 90);
             lblUsernameE.Name = "lblUsernameE";
             lblUsernameE.Size = new Size(0, 20);
             lblUsernameE.TabIndex = 2;
@@ -152,7 +152,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            label3.Location = new Point(47, 93);
+            label3.Location = new Point(47, 116);
             label3.Name = "label3";
             label3.Size = new Size(128, 31);
             label3.TabIndex = 1;
@@ -162,7 +162,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            label2.Location = new Point(47, 29);
+            label2.Location = new Point(47, 52);
             label2.Name = "label2";
             label2.Size = new Size(129, 31);
             label2.TabIndex = 0;

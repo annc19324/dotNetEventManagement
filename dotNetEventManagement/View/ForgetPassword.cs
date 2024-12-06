@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using dotNetEventManagement.Controllers;
+using dotNetEventManagement.Models;
 
 namespace dotNetEventManagement.View
 {
@@ -27,7 +28,12 @@ namespace dotNetEventManagement.View
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LogInView().ShowDialog();
+            var newWindowState = new LogInView();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
@@ -193,7 +199,12 @@ namespace dotNetEventManagement.View
             {
                 this.Hide();
                 MessageBox.Show("Cập nhật mật khẩu thành công!");
-                new LogInView().ShowDialog();
+                var newWindowState = new LogInView();
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    newWindowState.WindowState = FormWindowState.Maximized;
+                }
+                newWindowState.ShowDialog();
                 this.Close();
             }
             else
