@@ -10,7 +10,7 @@ namespace dotNetEventManagement.Models
     {
         public static User ?CurrentUser { get; set; }
         private static List<Event> registeredEvents = new List<Event>();
-        private static Order ?order;
+        public static Order? order { get; set; }
 
         public static void clear()
         {
@@ -44,6 +44,15 @@ namespace dotNetEventManagement.Models
         public static void removeRegisteredEventById(String eventId)
         {
             registeredEvents.RemoveAll(e => e.EventId == eventId);
+        }
+
+        public static void SetOrder(Order newOrder)
+        {
+            order = newOrder;
+        }
+        public static Order? GetOrder()
+        {
+            return order;
         }
     }
 }

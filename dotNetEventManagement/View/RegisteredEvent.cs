@@ -103,10 +103,10 @@ namespace dotNetEventManagement.View
             // Tìm đơn hàng trong cơ sở dữ liệu
             OrderController orderController = new OrderController();
             Order order = orderController.GetOrderByUserIdAndEventId(userId, eventId);
-
+            Session.SetOrder(order);
             if (order != null)
             {
-                new PayBillView(order).ShowDialog();
+                new PayBillView(Session.order).ShowDialog();
             }
             else
             {
