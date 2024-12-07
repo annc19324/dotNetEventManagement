@@ -37,6 +37,9 @@
             toolStripMenuItem5 = new ToolStripMenuItem();
             toolStripMenuItem6 = new ToolStripMenuItem();
             panel1 = new Panel();
+            panel4 = new Panel();
+            dataGridView1 = new DataGridView();
+            label2 = new Label();
             panel3 = new Panel();
             button5 = new Button();
             button4 = new Button();
@@ -45,15 +48,12 @@
             button1 = new Button();
             panel2 = new Panel();
             label1 = new Label();
-            panel4 = new Panel();
-            label2 = new Label();
-            dataGridView1 = new DataGridView();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
-            panel2.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -71,7 +71,6 @@
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(74, 20);
             toolStripMenuItem1.Text = "Trang Chủ";
-            toolStripMenuItem1.Click += toolStripMenuItem3_Click;
             // 
             // toolStripMenuItem2
             // 
@@ -123,6 +122,36 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 421);
             panel1.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(dataGridView1);
+            panel4.Controls.Add(label2);
+            panel4.Location = new Point(209, 70);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(588, 348);
+            panel4.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(24, 64);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(534, 272);
+            dataGridView1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(178, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(212, 30);
+            label2.TabIndex = 0;
+            label2.Text = "Thống kê Đơn Hàng";
             // 
             // panel3
             // 
@@ -209,36 +238,6 @@
             label1.TabIndex = 0;
             label1.Text = "Xin Chào Admin";
             // 
-            // panel4
-            // 
-            panel4.Controls.Add(dataGridView1);
-            panel4.Controls.Add(label2);
-            panel4.Location = new Point(209, 70);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(588, 348);
-            panel4.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(178, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(212, 30);
-            label2.TabIndex = 0;
-            label2.Text = "Thống kê Đơn Hàng";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(24, 64);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(534, 272);
-            dataGridView1.TabIndex = 1;
-            // 
             // AdminHome
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -252,12 +251,12 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
