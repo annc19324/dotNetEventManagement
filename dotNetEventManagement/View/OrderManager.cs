@@ -211,7 +211,7 @@ namespace dotNetEventManagement.View
                     // Lấy giá trị OrderId từ cột đầu tiên
                     int orderId = (int)dataGridViewOrderManager.Rows[selectedRow].Cells[0].Value;
 
-                    orderController.PayBill(orderId);
+                    orderController.UpdatePaymentStatus(orderId, "Đã thanh toán");
 
                     LoadOrder();
 

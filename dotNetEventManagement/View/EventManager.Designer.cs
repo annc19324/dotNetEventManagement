@@ -74,17 +74,17 @@
             // panel1
             // 
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(2, 1);
+            panel1.Location = new Point(2, 34);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1109, 95);
+            panel1.Size = new Size(1109, 62);
             panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(414, 23);
+            label1.Location = new Point(401, 9);
             label1.Name = "label1";
             label1.Size = new Size(280, 46);
             label1.TabIndex = 0;
@@ -119,7 +119,7 @@
             // 
             // btnXoa
             // 
-            btnXoa.Location = new Point(269, 508);
+            btnXoa.Location = new Point(256, 509);
             btnXoa.Margin = new Padding(3, 4, 3, 4);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(86, 31);
@@ -141,7 +141,7 @@
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(19, 507);
+            btnThem.Location = new Point(24, 507);
             btnThem.Margin = new Padding(3, 4, 3, 4);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(86, 31);
@@ -155,7 +155,7 @@
             txtGiaVe.Location = new Point(143, 441);
             txtGiaVe.Margin = new Padding(3, 4, 3, 4);
             txtGiaVe.Name = "txtGiaVe";
-            txtGiaVe.Size = new Size(114, 27);
+            txtGiaVe.Size = new Size(199, 27);
             txtGiaVe.TabIndex = 15;
             // 
             // cmbTrangThai
@@ -165,7 +165,7 @@
             cmbTrangThai.Location = new Point(145, 399);
             cmbTrangThai.Margin = new Padding(3, 4, 3, 4);
             cmbTrangThai.Name = "cmbTrangThai";
-            cmbTrangThai.Size = new Size(138, 28);
+            cmbTrangThai.Size = new Size(197, 28);
             cmbTrangThai.TabIndex = 14;
             // 
             // txtMoTa
@@ -174,7 +174,7 @@
             txtMoTa.Margin = new Padding(3, 4, 3, 4);
             txtMoTa.Multiline = true;
             txtMoTa.Name = "txtMoTa";
-            txtMoTa.Size = new Size(185, 63);
+            txtMoTa.Size = new Size(199, 63);
             txtMoTa.TabIndex = 13;
             // 
             // txtDiaDiem
@@ -182,29 +182,29 @@
             txtDiaDiem.Location = new Point(143, 267);
             txtDiaDiem.Margin = new Padding(3, 4, 3, 4);
             txtDiaDiem.Name = "txtDiaDiem";
-            txtDiaDiem.Size = new Size(114, 27);
+            txtDiaDiem.Size = new Size(199, 27);
             txtDiaDiem.TabIndex = 12;
             // 
             // txtTen
             // 
-            txtTen.Location = new Point(138, 95);
+            txtTen.Location = new Point(145, 99);
             txtTen.Margin = new Padding(3, 4, 3, 4);
             txtTen.Name = "txtTen";
-            txtTen.Size = new Size(114, 27);
+            txtTen.Size = new Size(197, 27);
             txtTen.TabIndex = 11;
             // 
             // txtMa
             // 
-            txtMa.Location = new Point(137, 41);
+            txtMa.Location = new Point(144, 39);
             txtMa.Margin = new Padding(3, 4, 3, 4);
             txtMa.Name = "txtMa";
-            txtMa.Size = new Size(134, 27);
+            txtMa.Size = new Size(198, 27);
             txtMa.TabIndex = 10;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(23, 441);
+            label9.Location = new Point(23, 448);
             label9.Name = "label9";
             label9.Size = new Size(53, 20);
             label9.TabIndex = 9;
@@ -222,7 +222,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(24, 321);
+            label7.Location = new Point(23, 321);
             label7.Name = "label7";
             label7.Size = new Size(51, 20);
             label7.TabIndex = 7;
@@ -231,7 +231,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(24, 277);
+            label6.Location = new Point(19, 274);
             label6.Name = "label6";
             label6.Size = new Size(75, 20);
             label6.TabIndex = 6;
@@ -248,7 +248,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(23, 207);
+            label5.Location = new Point(19, 212);
             label5.Name = "label5";
             label5.Size = new Size(108, 20);
             label5.TabIndex = 4;
@@ -257,7 +257,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(23, 155);
+            label4.Location = new Point(19, 155);
             label4.Name = "label4";
             label4.Size = new Size(104, 20);
             label4.TabIndex = 3;
@@ -306,10 +306,11 @@
             // 
             // btnLamMoi
             // 
-            btnLamMoi.Location = new Point(632, 71);
+            btnLamMoi.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnLamMoi.Location = new Point(602, 86);
             btnLamMoi.Margin = new Padding(3, 4, 3, 4);
             btnLamMoi.Name = "btnLamMoi";
-            btnLamMoi.Size = new Size(86, 31);
+            btnLamMoi.Size = new Size(138, 40);
             btnLamMoi.TabIndex = 4;
             btnLamMoi.Text = "Làm Mới";
             btnLamMoi.UseVisualStyleBackColor = true;
@@ -317,10 +318,11 @@
             // 
             // btnTimKiem
             // 
-            btnTimKiem.Location = new Point(503, 71);
+            btnTimKiem.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnTimKiem.Location = new Point(463, 85);
             btnTimKiem.Margin = new Padding(3, 4, 3, 4);
             btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(86, 31);
+            btnTimKiem.Size = new Size(133, 42);
             btnTimKiem.TabIndex = 3;
             btnTimKiem.Text = "Tìm Kiếm";
             btnTimKiem.UseVisualStyleBackColor = true;
@@ -328,18 +330,20 @@
             // 
             // txtTimKiem
             // 
-            txtTimKiem.Location = new Point(273, 71);
+            txtTimKiem.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtTimKiem.Location = new Point(3, 88);
             txtTimKiem.Margin = new Padding(3, 4, 3, 4);
             txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.Size = new Size(209, 27);
+            txtTimKiem.Size = new Size(454, 38);
             txtTimKiem.TabIndex = 2;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(269, 21);
+            label10.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(254, 37);
             label10.Name = "label10";
-            label10.Size = new Size(122, 20);
+            label10.Size = new Size(265, 41);
             label10.TabIndex = 1;
             label10.Text = "Thông tin sự kiện";
             // 
@@ -347,13 +351,15 @@
             // 
             dataGridViewEvents.AllowUserToAddRows = false;
             dataGridViewEvents.AllowUserToDeleteRows = false;
+            dataGridViewEvents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewEvents.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewEvents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewEvents.Location = new Point(3, 173);
+            dataGridViewEvents.Location = new Point(3, 135);
             dataGridViewEvents.Margin = new Padding(3, 4, 3, 4);
             dataGridViewEvents.Name = "dataGridViewEvents";
             dataGridViewEvents.ReadOnly = true;
             dataGridViewEvents.RowHeadersWidth = 51;
-            dataGridViewEvents.Size = new Size(737, 347);
+            dataGridViewEvents.Size = new Size(737, 401);
             dataGridViewEvents.TabIndex = 0;
             dataGridViewEvents.CellClick += dataGridViewEvents_CellClick;
             // 
@@ -379,7 +385,7 @@
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
             toolStripMenuItem2.Size = new Size(257, 26);
-            toolStripMenuItem2.Text = "Quản Lý Đơn Hàng";
+            toolStripMenuItem2.Text = "Quản Lý Hóa Đơn";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // toolStripMenuItem3

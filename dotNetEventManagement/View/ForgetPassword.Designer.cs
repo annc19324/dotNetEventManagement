@@ -167,7 +167,7 @@
             // lblNewPasswordE
             // 
             lblNewPasswordE.AutoSize = true;
-            lblNewPasswordE.ForeColor = Color.Red;
+            lblNewPasswordE.ForeColor = Color.Gold;
             lblNewPasswordE.Location = new Point(276, 248);
             lblNewPasswordE.Name = "lblNewPasswordE";
             lblNewPasswordE.Size = new Size(0, 20);
@@ -176,7 +176,7 @@
             // lblEnterCodeE
             // 
             lblEnterCodeE.AutoSize = true;
-            lblEnterCodeE.ForeColor = Color.Red;
+            lblEnterCodeE.ForeColor = Color.Gold;
             lblEnterCodeE.Location = new Point(276, 184);
             lblEnterCodeE.Name = "lblEnterCodeE";
             lblEnterCodeE.Size = new Size(0, 20);
@@ -185,7 +185,7 @@
             // lblMailE
             // 
             lblMailE.AutoSize = true;
-            lblMailE.ForeColor = Color.Red;
+            lblMailE.ForeColor = Color.Gold;
             lblMailE.Location = new Point(276, 120);
             lblMailE.Name = "lblMailE";
             lblMailE.Size = new Size(0, 20);
@@ -194,7 +194,7 @@
             // lblUsernameE
             // 
             lblUsernameE.AutoSize = true;
-            lblUsernameE.ForeColor = Color.Red;
+            lblUsernameE.ForeColor = Color.Gold;
             lblUsernameE.Location = new Point(276, 56);
             lblUsernameE.Name = "lblUsernameE";
             lblUsernameE.Size = new Size(0, 20);
@@ -270,7 +270,7 @@
             BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(879, 512);
             Controls.Add(panelMain);
-            ForeColor = Color.White;
+            ForeColor = Color.Gold;
             Name = "ForgetPassword";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ForgetPassword";

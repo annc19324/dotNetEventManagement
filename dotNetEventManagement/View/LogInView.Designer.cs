@@ -121,7 +121,7 @@
             // lblPasswordE
             // 
             lblPasswordE.AutoSize = true;
-            lblPasswordE.ForeColor = Color.Red;
+            lblPasswordE.ForeColor = Color.Gold;
             lblPasswordE.Location = new Point(182, 154);
             lblPasswordE.Name = "lblPasswordE";
             lblPasswordE.Size = new Size(0, 20);
@@ -147,7 +147,7 @@
             // lblUsernameE
             // 
             lblUsernameE.AutoSize = true;
-            lblUsernameE.ForeColor = Color.Red;
+            lblUsernameE.ForeColor = Color.Gold;
             lblUsernameE.Location = new Point(182, 90);
             lblUsernameE.Name = "lblUsernameE";
             lblUsernameE.Size = new Size(0, 20);
@@ -201,6 +201,7 @@
             BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(800, 450);
             Controls.Add(panelMain);
+            ForeColor = Color.Gold;
             Name = "LogInView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LogInView";

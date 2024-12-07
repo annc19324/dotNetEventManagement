@@ -86,7 +86,7 @@
             // 
             // btnLamMoi
             // 
-            btnLamMoi.Location = new Point(494, 79);
+            btnLamMoi.Location = new Point(515, 21);
             btnLamMoi.Margin = new Padding(3, 4, 3, 4);
             btnLamMoi.Name = "btnLamMoi";
             btnLamMoi.Size = new Size(86, 31);
@@ -99,13 +99,15 @@
             // 
             dataGridViewUserAccount.AllowUserToAddRows = false;
             dataGridViewUserAccount.AllowUserToDeleteRows = false;
+            dataGridViewUserAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewUserAccount.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewUserAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewUserAccount.Location = new Point(3, 131);
+            dataGridViewUserAccount.Location = new Point(3, 60);
             dataGridViewUserAccount.Margin = new Padding(3, 4, 3, 4);
             dataGridViewUserAccount.Name = "dataGridViewUserAccount";
             dataGridViewUserAccount.ReadOnly = true;
             dataGridViewUserAccount.RowHeadersWidth = 51;
-            dataGridViewUserAccount.Size = new Size(598, 361);
+            dataGridViewUserAccount.Size = new Size(598, 432);
             dataGridViewUserAccount.TabIndex = 1;
             dataGridViewUserAccount.CellClick += dataGridViewUserAccount_CellClick;
             // 
@@ -168,7 +170,7 @@
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
             toolStripMenuItem3.Size = new Size(257, 26);
-            toolStripMenuItem3.Text = "Quản Lý Đơn Hàng";
+            toolStripMenuItem3.Text = "Quản Lý Hóa Đơn";
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
             // toolStripMenuItem7
@@ -222,16 +224,16 @@
             // 
             cmbRole.FormattingEnabled = true;
             cmbRole.Items.AddRange(new object[] { "admin", "user" });
-            cmbRole.Location = new Point(133, 351);
+            cmbRole.Location = new Point(133, 348);
             cmbRole.Margin = new Padding(3, 4, 3, 4);
             cmbRole.Name = "cmbRole";
-            cmbRole.Size = new Size(138, 28);
+            cmbRole.Size = new Size(178, 28);
             cmbRole.TabIndex = 10;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(29, 355);
+            label5.Location = new Point(14, 351);
             label5.Name = "label5";
             label5.Size = new Size(42, 20);
             label5.TabIndex = 9;
@@ -272,7 +274,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(131, 240);
+            txtPassword.Location = new Point(133, 237);
             txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(179, 27);
@@ -289,7 +291,7 @@
             // 
             // txtNameAccount
             // 
-            txtNameAccount.Location = new Point(131, 48);
+            txtNameAccount.Location = new Point(133, 48);
             txtNameAccount.Margin = new Padding(3, 4, 3, 4);
             txtNameAccount.Name = "txtNameAccount";
             txtNameAccount.Size = new Size(179, 27);
@@ -298,7 +300,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(29, 244);
+            label4.Location = new Point(14, 240);
             label4.Name = "label4";
             label4.Size = new Size(75, 20);
             label4.TabIndex = 2;
@@ -307,7 +309,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(15, 133);
+            label3.Location = new Point(11, 132);
             label3.Name = "label3";
             label3.Size = new Size(121, 20);
             label3.TabIndex = 1;
@@ -316,7 +318,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(27, 48);
+            label2.Location = new Point(13, 48);
             label2.Name = "label2";
             label2.Size = new Size(76, 20);
             label2.TabIndex = 0;
