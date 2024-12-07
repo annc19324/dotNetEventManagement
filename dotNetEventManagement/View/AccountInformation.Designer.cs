@@ -147,7 +147,7 @@
             // labelPhoneE
             // 
             labelPhoneE.AutoSize = true;
-            labelPhoneE.ForeColor = Color.Red;
+            labelPhoneE.ForeColor = Color.Gold;
             labelPhoneE.Location = new Point(238, 390);
             labelPhoneE.Name = "labelPhoneE";
             labelPhoneE.Size = new Size(0, 20);
@@ -156,7 +156,7 @@
             // labelMailE
             // 
             labelMailE.AutoSize = true;
-            labelMailE.ForeColor = Color.Red;
+            labelMailE.ForeColor = Color.Gold;
             labelMailE.Location = new Point(238, 330);
             labelMailE.Name = "labelMailE";
             labelMailE.Size = new Size(0, 20);
@@ -165,7 +165,7 @@
             // labelDateOfBirthE
             // 
             labelDateOfBirthE.AutoSize = true;
-            labelDateOfBirthE.ForeColor = Color.Red;
+            labelDateOfBirthE.ForeColor = Color.Gold;
             labelDateOfBirthE.Location = new Point(238, 269);
             labelDateOfBirthE.Name = "labelDateOfBirthE";
             labelDateOfBirthE.Size = new Size(0, 20);
@@ -174,7 +174,7 @@
             // labelFullnameE
             // 
             labelFullnameE.AutoSize = true;
-            labelFullnameE.ForeColor = Color.Red;
+            labelFullnameE.ForeColor = Color.Gold;
             labelFullnameE.Location = new Point(238, 209);
             labelFullnameE.Name = "labelFullnameE";
             labelFullnameE.Size = new Size(0, 20);
@@ -183,7 +183,7 @@
             // labelUsernameE
             // 
             labelUsernameE.AutoSize = true;
-            labelUsernameE.ForeColor = Color.Red;
+            labelUsernameE.ForeColor = Color.Gold;
             labelUsernameE.Location = new Point(238, 149);
             labelUsernameE.Name = "labelUsernameE";
             labelUsernameE.Size = new Size(0, 20);

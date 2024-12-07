@@ -164,7 +164,7 @@
             // labelConfirmPasswordE
             // 
             labelConfirmPasswordE.AutoSize = true;
-            labelConfirmPasswordE.ForeColor = Color.Red;
+            labelConfirmPasswordE.ForeColor = Color.Gold;
             labelConfirmPasswordE.Location = new Point(238, 269);
             labelConfirmPasswordE.Name = "labelConfirmPasswordE";
             labelConfirmPasswordE.Size = new Size(0, 20);
@@ -173,7 +173,7 @@
             // labelNewPasswordE
             // 
             labelNewPasswordE.AutoSize = true;
-            labelNewPasswordE.ForeColor = Color.Red;
+            labelNewPasswordE.ForeColor = Color.Gold;
             labelNewPasswordE.Location = new Point(238, 209);
             labelNewPasswordE.Name = "labelNewPasswordE";
             labelNewPasswordE.Size = new Size(0, 20);
@@ -182,7 +182,7 @@
             // labelOldPasswordE
             // 
             labelOldPasswordE.AutoSize = true;
-            labelOldPasswordE.ForeColor = Color.Red;
+            labelOldPasswordE.ForeColor = Color.Gold;
             labelOldPasswordE.Location = new Point(238, 149);
             labelOldPasswordE.Name = "labelOldPasswordE";
             labelOldPasswordE.Size = new Size(0, 20);
