@@ -191,7 +191,7 @@
             // 
             // txtPhone
             // 
-            txtPhone.Font = new Font("Segoe UI", 12F);
+            txtPhone.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtPhone.Location = new Point(238, 353);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(539, 34);
@@ -199,7 +199,7 @@
             // 
             // txtMail
             // 
-            txtMail.Font = new Font("Segoe UI", 12F);
+            txtMail.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtMail.Location = new Point(238, 292);
             txtMail.Name = "txtMail";
             txtMail.Size = new Size(539, 34);
@@ -207,7 +207,7 @@
             // 
             // txtFullname
             // 
-            txtFullname.Font = new Font("Segoe UI", 12F);
+            txtFullname.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtFullname.Location = new Point(238, 172);
             txtFullname.Name = "txtFullname";
             txtFullname.Size = new Size(539, 34);
@@ -215,7 +215,7 @@
             // 
             // txtUsername
             // 
-            txtUsername.Font = new Font("Segoe UI", 12F);
+            txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtUsername.Location = new Point(238, 110);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(539, 34);
@@ -224,50 +224,55 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F);
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(39, 356);
             label6.Name = "label6";
-            label6.Size = new Size(137, 28);
+            label6.Size = new Size(149, 28);
             label6.TabIndex = 5;
             label6.Text = "Số điện thoại: ";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(40, 295);
             label5.Name = "label5";
-            label5.Size = new Size(59, 28);
+            label5.Size = new Size(65, 28);
             label5.TabIndex = 4;
             label5.Text = "Mail: ";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(40, 239);
             label4.Name = "label4";
-            label4.Size = new Size(108, 28);
+            label4.Size = new Size(118, 28);
             label4.TabIndex = 3;
             label4.Text = "Ngày sinh: ";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(39, 175);
             label3.Name = "label3";
-            label3.Size = new Size(80, 28);
+            label3.Size = new Size(87, 28);
             label3.TabIndex = 2;
             label3.Text = "Họ tên: ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(40, 113);
             label2.Name = "label2";
-            label2.Size = new Size(158, 28);
+            label2.Size = new Size(172, 28);
             label2.TabIndex = 1;
             label2.Text = "Tên người dùng: ";
             // 
@@ -291,24 +296,28 @@
             // 
             // btnSave
             // 
-            btnSave.Font = new Font("Segoe UI", 12F);
+            btnSave.BackColor = Color.DeepSkyBlue;
+            btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnSave.ForeColor = Color.White;
             btnSave.Location = new Point(143, 3);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(119, 41);
             btnSave.TabIndex = 1;
             btnSave.Text = "Lưu";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // btnEdit
             // 
-            btnEdit.Font = new Font("Segoe UI", 12F);
+            btnEdit.BackColor = Color.DeepSkyBlue;
+            btnEdit.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnEdit.ForeColor = Color.White;
             btnEdit.Location = new Point(3, 3);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(118, 41);
+            btnEdit.Size = new Size(134, 41);
             btnEdit.TabIndex = 0;
             btnEdit.Text = "Chỉnh sửa";
-            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
             // 
             // panel2
@@ -322,10 +331,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(128, 32);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(73, 24);
             label1.Name = "label1";
-            label1.Size = new Size(257, 41);
+            label1.Size = new Size(362, 54);
             label1.TabIndex = 0;
             label1.Text = "Thông tin cá nhân";
             // 
@@ -445,7 +455,7 @@
             // 
             panelHeader.Controls.Add(lblMenu);
             panelHeader.Controls.Add(lblFullname);
-            panelHeader.Location = new Point(3, 8);
+            panelHeader.Location = new Point(3, -1);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(868, 53);
             panelHeader.TabIndex = 1;
@@ -469,6 +479,7 @@
             lblFullname.Anchor = AnchorStyles.None;
             lblFullname.AutoSize = true;
             lblFullname.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFullname.ForeColor = Color.White;
             lblFullname.Location = new Point(582, 12);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(0, 31);
@@ -478,6 +489,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(898, 634);
             Controls.Add(panelMain);
             Name = "AccountInformation";

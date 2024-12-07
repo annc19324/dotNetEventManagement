@@ -73,7 +73,7 @@
             // pnlSlideMenu
             // 
             pnlSlideMenu.Controls.Add(panelMenu);
-            pnlSlideMenu.Location = new Point(3, 0);
+            pnlSlideMenu.Location = new Point(-2, 0);
             pnlSlideMenu.Name = "pnlSlideMenu";
             pnlSlideMenu.Size = new Size(0, 450);
             pnlSlideMenu.TabIndex = 2;
@@ -206,7 +206,7 @@
             // panelNavigation
             // 
             panelNavigation.Anchor = AnchorStyles.None;
-            panelNavigation.BackColor = Color.WhiteSmoke;
+            panelNavigation.BackColor = Color.Transparent;
             panelNavigation.Controls.Add(btnLogOut);
             panelNavigation.Controls.Add(btnInformation);
             panelNavigation.Controls.Add(btnRegisteredEvent);
@@ -218,53 +218,61 @@
             // 
             // btnLogOut
             // 
-            btnLogOut.Font = new Font("Segoe UI", 13.8F);
+            btnLogOut.BackColor = Color.DeepSkyBlue;
+            btnLogOut.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnLogOut.ForeColor = Color.White;
             btnLogOut.Location = new Point(56, 211);
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(384, 41);
             btnLogOut.TabIndex = 3;
             btnLogOut.Text = "Đăng xuất";
-            btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.UseVisualStyleBackColor = false;
             btnLogOut.Click += btnLogOut_Click;
             // 
             // btnInformation
             // 
-            btnInformation.Font = new Font("Segoe UI", 13.8F);
+            btnInformation.BackColor = Color.DeepSkyBlue;
+            btnInformation.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnInformation.ForeColor = Color.White;
             btnInformation.Location = new Point(56, 153);
             btnInformation.Name = "btnInformation";
             btnInformation.Size = new Size(384, 41);
             btnInformation.TabIndex = 2;
             btnInformation.Text = "Thông tin tài khoản";
-            btnInformation.UseVisualStyleBackColor = true;
+            btnInformation.UseVisualStyleBackColor = false;
             btnInformation.Click += btnInformation_Click;
             // 
             // btnRegisteredEvent
             // 
-            btnRegisteredEvent.Font = new Font("Segoe UI", 13.8F);
+            btnRegisteredEvent.BackColor = Color.DeepSkyBlue;
+            btnRegisteredEvent.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnRegisteredEvent.ForeColor = Color.White;
             btnRegisteredEvent.Location = new Point(56, 95);
             btnRegisteredEvent.Name = "btnRegisteredEvent";
             btnRegisteredEvent.Size = new Size(384, 41);
             btnRegisteredEvent.TabIndex = 1;
             btnRegisteredEvent.Text = "Sự kiện đã đăng ký";
-            btnRegisteredEvent.UseVisualStyleBackColor = true;
+            btnRegisteredEvent.UseVisualStyleBackColor = false;
             btnRegisteredEvent.Click += btnRegisteredEvent_Click;
             // 
             // btnEventList
             // 
-            btnEventList.Font = new Font("Segoe UI", 13.8F);
+            btnEventList.BackColor = Color.DeepSkyBlue;
+            btnEventList.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnEventList.ForeColor = Color.White;
             btnEventList.Location = new Point(56, 37);
             btnEventList.Name = "btnEventList";
             btnEventList.Size = new Size(384, 41);
             btnEventList.TabIndex = 0;
             btnEventList.Text = "Đăng ký sự kiện mới";
-            btnEventList.UseVisualStyleBackColor = true;
+            btnEventList.UseVisualStyleBackColor = false;
             btnEventList.Click += btnEventList_Click;
             // 
             // panelHeader
             // 
             panelHeader.Controls.Add(lblMenu);
             panelHeader.Controls.Add(lblFullname);
-            panelHeader.Location = new Point(3, 11);
+            panelHeader.Location = new Point(3, 0);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(793, 52);
             panelHeader.TabIndex = 0;
@@ -287,7 +295,9 @@
             // 
             lblFullname.Anchor = AnchorStyles.None;
             lblFullname.AutoSize = true;
+            lblFullname.BackColor = Color.Transparent;
             lblFullname.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFullname.ForeColor = Color.White;
             lblFullname.Location = new Point(89, 11);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(0, 31);
@@ -295,10 +305,11 @@
             // 
             // UserHome
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
+            BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(800, 450);
             Controls.Add(panelMain);
+            ForeColor = Color.Black;
             Name = "UserHome";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserHome";

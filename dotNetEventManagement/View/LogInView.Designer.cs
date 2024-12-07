@@ -84,6 +84,7 @@
             // lblForgetPassword
             // 
             lblForgetPassword.AutoSize = true;
+            lblForgetPassword.ForeColor = Color.White;
             lblForgetPassword.Location = new Point(401, 238);
             lblForgetPassword.Name = "lblForgetPassword";
             lblForgetPassword.Size = new Size(116, 20);
@@ -93,24 +94,28 @@
             // 
             // btnSignUp
             // 
+            btnSignUp.BackColor = Color.DeepSkyBlue;
             btnSignUp.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnSignUp.ForeColor = Color.White;
             btnSignUp.Location = new Point(307, 177);
             btnSignUp.Name = "btnSignUp";
             btnSignUp.Size = new Size(210, 46);
             btnSignUp.TabIndex = 7;
             btnSignUp.Text = "Đăng ký";
-            btnSignUp.UseVisualStyleBackColor = true;
+            btnSignUp.UseVisualStyleBackColor = false;
             btnSignUp.Click += btnSignUp_Click;
             // 
             // btnLogIn
             // 
+            btnLogIn.BackColor = Color.DeepSkyBlue;
             btnLogIn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnLogIn.ForeColor = Color.White;
             btnLogIn.Location = new Point(47, 177);
             btnLogIn.Name = "btnLogIn";
             btnLogIn.Size = new Size(208, 46);
             btnLogIn.TabIndex = 6;
             btnLogIn.Text = "Đăng nhập";
-            btnLogIn.UseVisualStyleBackColor = true;
+            btnLogIn.UseVisualStyleBackColor = false;
             btnLogIn.Click += btnLogIn_Click;
             // 
             // lblPasswordE
@@ -152,6 +157,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(47, 116);
             label3.Name = "label3";
             label3.Size = new Size(128, 31);
@@ -162,6 +168,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(47, 52);
             label2.Name = "label2";
             label2.Size = new Size(129, 31);
@@ -180,6 +187,7 @@
             // 
             lblHeader.AutoSize = true;
             lblHeader.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHeader.ForeColor = Color.White;
             lblHeader.Location = new Point(261, 9);
             lblHeader.Name = "lblHeader";
             lblHeader.Size = new Size(230, 54);
@@ -190,6 +198,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(800, 450);
             Controls.Add(panelMain);
             Name = "LogInView";

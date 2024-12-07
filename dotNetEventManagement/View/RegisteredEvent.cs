@@ -103,10 +103,10 @@ namespace dotNetEventManagement.View
             // Tìm đơn hàng trong cơ sở dữ liệu
             OrderController orderController = new OrderController();
             Order order = orderController.GetOrderByUserIdAndEventId(userId, eventId);
-
+            Session.SetOrder(order);
             if (order != null)
             {
-                new PayBillView(order).ShowDialog();
+                new PayBillView(Session.order).ShowDialog();
             }
             else
             {
@@ -334,10 +334,11 @@ namespace dotNetEventManagement.View
         {
             panelContainer.BringToFront();
             panelHome.SendToBack();
-            panelContainer.BackColor = Color.LightGray;
+            panelContainer.BackColor = SystemColors.GradientActiveCaption;
+            panelHeader.BackColor = SystemColors.GradientActiveCaption;
             panelHome.Enabled = false;
             pnlSlideMenu.BringToFront();
-            pnlSlideMenu.BackColor = Color.DarkGray;
+            pnlSlideMenu.BackColor = SystemColors.MenuHighlight;
 
             isOpeningMenu = true;
 
@@ -358,7 +359,9 @@ namespace dotNetEventManagement.View
         {
             panelHome.BringToFront();
             panelContainer.SendToBack();
-            //panelContainer.BackColor = Color.Transparent;
+            panelContainer.BackColor = Color.Transparent;
+            panelHeader.BackColor = Color.Transparent;
+            pnlSlideMenu.BackColor = SystemColors.GradientActiveCaption;
             panelHome.Enabled = true;
 
             isOpeningMenu = false;

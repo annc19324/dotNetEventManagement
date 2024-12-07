@@ -237,10 +237,11 @@ namespace dotNetEventManagement.View
         {
             panelContainer.BringToFront();
             panelHome.SendToBack();
-            panelContainer.BackColor = Color.LightGray;
+            panelContainer.BackColor = SystemColors.GradientActiveCaption;
+            panelHeader.BackColor = SystemColors.GradientActiveCaption;
             panelHome.Enabled = false;
             pnlSlideMenu.BringToFront();
-            pnlSlideMenu.BackColor = Color.DarkGray;
+            pnlSlideMenu.BackColor = SystemColors.MenuHighlight;
 
             isOpeningMenu = true;
 
@@ -261,8 +262,10 @@ namespace dotNetEventManagement.View
         {
             panelHome.BringToFront();
             panelContainer.SendToBack();
-            //panelContainer.BackColor = Color.Transparent;
+            panelContainer.BackColor = Color.Transparent;
             panelHome.Enabled = true;
+            pnlSlideMenu.BackColor = SystemColors.GradientActiveCaption;
+            panelHeader.BackColor = Color.Transparent;
 
             isOpeningMenu = false;
 
