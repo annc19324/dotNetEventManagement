@@ -31,7 +31,7 @@ namespace dotNetEventManagement.View
             txtFullname.Text = Session.CurrentUser.Fullname;
             txtMail.Text = Session.CurrentUser.Mail;
             txtPhone.Text = Session.CurrentUser.Phone;
-            dtpDateOfBirth.Value = Session.CurrentUser.DateOfBirth;
+            dtpDateOfBirth.Value = (DateTime)Session.CurrentUser.DateOfBirth;
         }
 
         private void lockTxt(bool a)
