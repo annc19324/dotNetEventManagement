@@ -7,6 +7,9 @@
     <Compile Update="View\AdminHome.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\EventManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -32,6 +32,7 @@
             panelContainer = new Panel();
             panelSignUp = new Panel();
             lblCodeE = new Label();
+            btnSignUp = new Button();
             label8 = new Label();
             btnSendCode = new Button();
             txtEnterCode = new TextBox();
@@ -44,7 +45,6 @@
             lblFullNameE = new Label();
             lblUsernameE = new Label();
             btnBackToLogIn = new Button();
-            btnSignUp = new Button();
             txtPhone = new TextBox();
             txtConfirmPassword = new TextBox();
             txtMail = new TextBox();
@@ -87,6 +87,7 @@
             // panelSignUp
             // 
             panelSignUp.Controls.Add(lblCodeE);
+            panelSignUp.Controls.Add(btnSignUp);
             panelSignUp.Controls.Add(label8);
             panelSignUp.Controls.Add(btnSendCode);
             panelSignUp.Controls.Add(txtEnterCode);
@@ -99,7 +100,6 @@
             panelSignUp.Controls.Add(lblFullNameE);
             panelSignUp.Controls.Add(lblUsernameE);
             panelSignUp.Controls.Add(btnBackToLogIn);
-            panelSignUp.Controls.Add(btnSignUp);
             panelSignUp.Controls.Add(txtPhone);
             panelSignUp.Controls.Add(txtConfirmPassword);
             panelSignUp.Controls.Add(txtMail);
@@ -129,9 +129,23 @@
             lblCodeE.Size = new Size(0, 20);
             lblCodeE.TabIndex = 26;
             // 
+            // btnSignUp
+            // 
+            btnSignUp.BackColor = Color.DeepSkyBlue;
+            btnSignUp.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnSignUp.ForeColor = Color.White;
+            btnSignUp.Location = new Point(384, 529);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new Size(305, 45);
+            btnSignUp.TabIndex = 14;
+            btnSignUp.Text = "Đăng ký tài khoản";
+            btnSignUp.UseVisualStyleBackColor = false;
+            btnSignUp.Click += btnSignUp_Click;
+            // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.ForeColor = Color.White;
             label8.Location = new Point(3, 393);
             label8.Name = "label8";
             label8.Size = new Size(220, 31);
@@ -140,6 +154,7 @@
             // 
             // btnSendCode
             // 
+            btnSendCode.ForeColor = Color.White;
             btnSendCode.Location = new Point(544, 389);
             btnSendCode.Name = "btnSendCode";
             btnSendCode.Size = new Size(145, 38);
@@ -234,25 +249,16 @@
             // 
             // btnBackToLogIn
             // 
+            btnBackToLogIn.BackColor = Color.DeepSkyBlue;
             btnBackToLogIn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnBackToLogIn.Location = new Point(368, 525);
+            btnBackToLogIn.ForeColor = Color.White;
+            btnBackToLogIn.Location = new Point(3, 529);
             btnBackToLogIn.Name = "btnBackToLogIn";
             btnBackToLogIn.Size = new Size(321, 45);
             btnBackToLogIn.TabIndex = 15;
             btnBackToLogIn.Text = "Đã có tài khoản?";
-            btnBackToLogIn.UseVisualStyleBackColor = true;
+            btnBackToLogIn.UseVisualStyleBackColor = false;
             btnBackToLogIn.Click += btnBackToLogIn_Click;
-            // 
-            // btnSignUp
-            // 
-            btnSignUp.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnSignUp.Location = new Point(3, 525);
-            btnSignUp.Name = "btnSignUp";
-            btnSignUp.Size = new Size(284, 45);
-            btnSignUp.TabIndex = 14;
-            btnSignUp.Text = "Đăng ký tài khoản";
-            btnSignUp.UseVisualStyleBackColor = true;
-            btnSignUp.Click += btnSignUp_Click;
             // 
             // txtPhone
             // 
@@ -308,6 +314,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label7.ForeColor = Color.White;
             label7.Location = new Point(3, 459);
             label7.Name = "label7";
             label7.Size = new Size(169, 31);
@@ -318,6 +325,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(3, 329);
             label6.Name = "label6";
             label6.Size = new Size(74, 31);
@@ -328,6 +336,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(3, 265);
             label5.Name = "label5";
             label5.Size = new Size(133, 31);
@@ -338,6 +347,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(3, 201);
             label4.Name = "label4";
             label4.Size = new Size(223, 31);
@@ -348,6 +358,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(3, 137);
             label3.Name = "label3";
             label3.Size = new Size(128, 31);
@@ -358,6 +369,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(3, 73);
             label2.Name = "label2";
             label2.Size = new Size(99, 31);
@@ -368,6 +380,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(3, 9);
             label1.Name = "label1";
             label1.Size = new Size(195, 31);
@@ -386,6 +399,7 @@
             // 
             lblHeader.AutoSize = true;
             lblHeader.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHeader.ForeColor = Color.White;
             lblHeader.Location = new Point(323, 18);
             lblHeader.Name = "lblHeader";
             lblHeader.Size = new Size(208, 62);
@@ -396,6 +410,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(890, 738);
             Controls.Add(panelMain);
             Name = "SignUpView";

@@ -1,4 +1,5 @@
 ﻿using dotNetEventManagement.Controllers;
+using dotNetEventManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -81,40 +82,63 @@ namespace dotNetEventManagement.View
                 return;
             }
 
-            LoginStatus status = userController.CheckLogin(username, password);
-            if (status == LoginStatus.UsernameNotFound)
+            User user = userController.CheckLogin(username, password);
+            if (user == null)
             {
-                lblUsernameE.Text = "tài khoản không tồn tại!";
+                lblPasswordE.Text = "Sai mật khẩu!";
                 return;
             }
-            else if (status == LoginStatus.PasswordNotFound)
-            {
-                lblPasswordE.Text = "sai mật khẩu!";
-                lblForgetPassword.ForeColor = Color.Red;
-                lblForgetPassword.Font = new Font("Sogoe UI", 10);
-                return;
-            }
-            else if (status == LoginStatus.Admin)
+
+            Session.CurrentUser = user;
+            if (user.Role.Equals("admin"))
             {
                 this.Hide();
-                new AdminHome().ShowDialog();
+                var newWindowState = new EventManager();
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    newWindowState.WindowState = FormWindowState.Maximized;
+                }
+                newWindowState.ShowDialog();
                 this.Close();
             }
-            else if (status == LoginStatus.User)
+            else if (user.Role.Equals("user"))
             {
                 this.Hide();
-                new UserHome().ShowDialog();
+                var newWindowState = new UserHome(Session.CurrentUser);
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    newWindowState.WindowState = FormWindowState.Maximized;
+                }
+                newWindowState.ShowDialog();
                 this.Close();
             }
+
 
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new SignUpView().ShowDialog();
+            var newWindowState = new SignUpView();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
 
+        }
+
+        private void lblForgetPassword_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newWindowState = new ForgetPassword();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
+            this.Close();
         }
     }
 }

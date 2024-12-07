@@ -14,7 +14,7 @@ namespace dotNetEventManagement.Models
         public string EndDate { get; set; } // Ngày kết thúc
         public string Location { get; set; } // Địa điểm tổ chức
         public string Description { get; set; } // Mô tả chi tiết
-        private string status; // Trạng thái của sự kiện
+        public string Status {  get; set; }
         public double Price { get; set; } // Giá vé
 
         // Constructors
@@ -33,22 +33,21 @@ namespace dotNetEventManagement.Models
             EndDate = endDate;
             Location = location;
             Description = description;
-            Status = status; // Sử dụng setter để kiểm tra giá trị
+            Status = status; 
             Price = price;
         }
 
-        // Property with validation for Status
-        public string Status
+        public Event(string eventName, string startDate, string endDate, string location, string description, string status, double price)
         {
-            get => status;
-            set
-            {
-                if (value == "soon" || value == "active" || value == "expired")
-                    status = value;
-                else
-                    throw new ArgumentException("Status must be 'soon', 'active', or 'expired'.");
-            }
+            EventName = eventName;
+            StartDate = startDate;
+            EndDate = endDate;
+            Location = location;
+            Description = description;
+            Status = status;
+            Price = price;
         }
+
 
         // ToString method
         public override string ToString()

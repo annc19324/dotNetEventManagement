@@ -101,7 +101,7 @@ namespace dotNetEventManagement.Controllers
 
             using (SqlConnection conn = dbConnect.ConnectSQL())
             {
-                conn.Open();
+                
                 SqlTransaction transaction = conn.BeginTransaction();
 
                 try

@@ -40,7 +40,12 @@ namespace dotNetEventManagement.View
         private void btnBackToLogIn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new LogInView().ShowDialog();
+            var newWindowState = new LogInView();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
@@ -92,11 +97,16 @@ namespace dotNetEventManagement.View
             string mail = txtMail.Text;
             string phone = txtPhone.Text;
             int age = DateTime.Now.Year - dateOfBirth.Year;
-            string enterCode = txtEnterCode.Text;
+            string enterCode = txtEnterCode.Text.Trim();
 
             if (string.IsNullOrEmpty(enterCode))
             {
                 lblCodeE.Text = "mã xác thực không được để trống!";
+                foundE = true;
+            }
+            else if (enterCode != verificationCode)
+            {
+                lblCodeE.Text = "mã xác thực không chính xác, vui lòng gửi lại!";
                 foundE = true;
             }
 
@@ -105,6 +115,7 @@ namespace dotNetEventManagement.View
                 lblDateOfBirthE.Text = "trên 16 tuổi mới được đăng ký!";
                 foundE = true;
             }
+
             if (string.IsNullOrEmpty(username))
             {
                 lblUsernameE.Text = "tên người dùng không được để trống"!;
@@ -126,25 +137,31 @@ namespace dotNetEventManagement.View
                 lblFullNameE.Text = "tên đầy đủ không được để trống!";
                 foundE = true;
             }
+            else if (fullname.Length < 6)
+            {
+                lblUsernameE.Text = "họ tên người dùng chứa ít nhất 6 kí tự!";
+                foundE = true;
+            }
             else if (!Regex.IsMatch(fullname, @"^[a-zA-Z\u00C0-\u1EF9]+(?: [a-zA-Z\u00C0-\u1EF9]+)*$"))
             {
                 lblFullNameE.Text = "tên đầy đủ chỉ được chứa a-z, A-Z và khoảng trắng";
                 foundE = true;
             }
 
+
             if (string.IsNullOrEmpty(password))
             {
-                lblPasswordE.Text = "mật khẩu không được để trống!";
+                lblPasswordE.Text = "mật khẩu không được để trống";
                 foundE = true;
             }
             else if (password.Length < 8)
             {
-                lblPasswordE.Text = "mật khẩu phải chứa ít nhất 8 kí tự!";
+                lblPasswordE.Text = "mật khẩu chứa ít nhất 8 kí tự!";
                 foundE = true;
             }
             else if (!Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$"))
             {
-                lblPasswordE.Text = "Cần chứa ít nhất 1 chữ thường, 1 chữ hoa, 1 chữ số và 1 ký tự đặc biệt!";
+                lblPasswordE.Text = "mật khẩu chứa ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số và 1 ít tự đặc biệt!";
                 foundE = true;
             }
 
@@ -188,21 +205,18 @@ namespace dotNetEventManagement.View
                 return;
             }
 
-            string enteredCode = txtEnterCode.Text.Trim();
-            if (enteredCode == verificationCode)
-            {
-            }
-            else
-            {
-                lblCodeE.Text = "mã xác thực không chính xác, vui lòng gửi lại!";
-                return;
-            }
+
             user = new User(username, fullname, password, dateOfBirth, mail, phone);
             if (userController.addAccount(user))
             {
-                MessageBox.Show("Đăng ký tài khoản " + user.Username + "thành công!");
+                MessageBox.Show("Đăng ký tài khoản " + user.Username + " thành công!");
                 this.Hide();
-                new LogInView().ShowDialog();
+                var newWindowState = new LogInView();
+                if (this.WindowState == FormWindowState.Maximized)
+                {
+                    newWindowState.WindowState = FormWindowState.Maximized;
+                }
+                newWindowState.ShowDialog();
                 this.Close();
             }
             else
@@ -228,12 +242,12 @@ namespace dotNetEventManagement.View
         private async void btnSendCode_Click(object sender, EventArgs e)
         {
             String mail = txtMail.Text.Trim();
-            lblCodeE.Text = "mã xác thực đang được gửi đến mail " + mail + ".";
             if (string.IsNullOrEmpty(mail))
             {
                 MessageBox.Show("vui lòng nhập mail để gửi mã xác nhận!");
                 return;
             }
+            lblCodeE.Text = "mã xác thực đang được gửi đến mail " + mail + ".";
             verificationCode = GenerateVerificationCode();
             await SendVerificationMail(mail, verificationCode);
             lblCodeE.Text = "mã xác thực đã được gửi đến " + mail + ".";
@@ -254,7 +268,7 @@ namespace dotNetEventManagement.View
                 //tao thong tin gui mail
                 MailMessage mailMessage = new MailMessage
                 {
-                    From = new MailAddress("javaeventmanagement@gmail.com"),
+                    From = new MailAddress("javaeventmanagement@gmail.com", "Event Management"),
                     Subject = "dotNetEventManagement gửi mã xác thực",
                     Body = $"Mã xác thực của bạn là: {code}",
                     IsBodyHtml = false
