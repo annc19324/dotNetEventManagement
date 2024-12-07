@@ -80,7 +80,15 @@ namespace dotNetEventManagement.View
 
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 
-            string filePath = @"D:\A_GroupProject\dotNetEventManagement\dotNetEventManagement\AllBills\Bills.xlsx";
+            string projectRoot = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\"));
+            string directoryPath = Path.Combine(projectRoot, "AllBills");
+
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            string filePath = Path.Combine(directoryPath, "Bills.xlsx");
 
             FileInfo fileInfo = new FileInfo(filePath);
             bool fileExists = fileInfo.Exists;
@@ -101,7 +109,6 @@ namespace dotNetEventManagement.View
 
                 int lastRow = worksheet.Dimension?.End.Row ?? 1;
 
-                // thong tin tiep theo
                 worksheet.Cells[lastRow + 1, 2].Value = order.OrderId.ToString();
                 worksheet.Cells[lastRow + 1, 3].Value = order.FullName;
                 worksheet.Cells[lastRow + 1, 4].Value = order.EventId?.ToString() ?? "Không có dữ liệu";
@@ -109,7 +116,6 @@ namespace dotNetEventManagement.View
                 worksheet.Cells[lastRow + 1, 6].Value = order.OrderDate.ToString("dd/MM/yyyy");
                 worksheet.Cells[lastRow + 1, 7].Value = order.TotalPrice.ToString();
 
-                // luu file excel
                 package.Save();
                 MessageBox.Show("Hóa đơn đã được thêm vào Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
