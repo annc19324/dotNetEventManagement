@@ -151,35 +151,41 @@
             // 
             // btnUserHome
             // 
-            btnUserHome.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUserHome.BackColor = Color.DeepSkyBlue;
+            btnUserHome.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnUserHome.ForeColor = Color.White;
             btnUserHome.Location = new Point(325, 311);
             btnUserHome.Name = "btnUserHome";
             btnUserHome.Size = new Size(249, 47);
             btnUserHome.TabIndex = 5;
             btnUserHome.Text = "Trang chủ";
-            btnUserHome.UseVisualStyleBackColor = true;
+            btnUserHome.UseVisualStyleBackColor = false;
             btnUserHome.Click += btnUserHome_Click;
             // 
             // btnShowBill
             // 
-            btnShowBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnShowBill.BackColor = Color.DeepSkyBlue;
+            btnShowBill.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnShowBill.ForeColor = Color.White;
             btnShowBill.Location = new Point(865, 311);
             btnShowBill.Name = "btnShowBill";
             btnShowBill.Size = new Size(244, 47);
             btnShowBill.TabIndex = 2;
             btnShowBill.Text = "Thanh toán hóa đơn";
-            btnShowBill.UseVisualStyleBackColor = true;
+            btnShowBill.UseVisualStyleBackColor = false;
             btnShowBill.Click += btnShowBill_Click;
             // 
             // btnCancelEvent
             // 
-            btnCancelEvent.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancelEvent.BackColor = Color.DeepSkyBlue;
+            btnCancelEvent.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnCancelEvent.ForeColor = Color.White;
             btnCancelEvent.Location = new Point(580, 311);
             btnCancelEvent.Name = "btnCancelEvent";
             btnCancelEvent.Size = new Size(279, 47);
             btnCancelEvent.TabIndex = 4;
             btnCancelEvent.Text = "Hủy sự kiện";
-            btnCancelEvent.UseVisualStyleBackColor = true;
+            btnCancelEvent.UseVisualStyleBackColor = false;
             btnCancelEvent.Click += btnCancelEvent_Click;
             // 
             // panel5
@@ -194,19 +200,22 @@
             // 
             // btnRefresh
             // 
+            btnRefresh.BackColor = Color.DeepSkyBlue;
             btnRefresh.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRefresh.ForeColor = Color.White;
             btnRefresh.Location = new Point(1061, 0);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(72, 46);
             btnRefresh.TabIndex = 3;
             btnRefresh.Text = "⟳";
-            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.Transparent;
-            btnSearch.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSearch.BackColor = Color.DeepSkyBlue;
+            btnSearch.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.White;
             btnSearch.Location = new Point(868, 0);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(187, 47);
@@ -235,6 +244,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(418, 8);
             label1.Name = "label1";
             label1.Size = new Size(287, 41);
@@ -357,7 +367,7 @@
             // 
             panelHeader.Controls.Add(lblMenu);
             panelHeader.Controls.Add(lblFullname);
-            panelHeader.Location = new Point(0, 0);
+            panelHeader.Location = new Point(0, -2);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1238, 52);
             panelHeader.TabIndex = 3;
@@ -381,6 +391,7 @@
             lblFullname.Anchor = AnchorStyles.None;
             lblFullname.AutoSize = true;
             lblFullname.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFullname.ForeColor = Color.White;
             lblFullname.Location = new Point(1019, 11);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(0, 31);
@@ -390,6 +401,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(1265, 692);
             Controls.Add(panelMain);
             Name = "RegisteredEvent";

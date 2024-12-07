@@ -95,35 +95,41 @@
             // 
             // btnChangePassword
             // 
+            btnChangePassword.BackColor = Color.DeepSkyBlue;
             btnChangePassword.Font = new Font("Segoe UI", 13.8F);
+            btnChangePassword.ForeColor = Color.White;
             btnChangePassword.Location = new Point(443, 298);
             btnChangePassword.Name = "btnChangePassword";
             btnChangePassword.Size = new Size(197, 38);
             btnChangePassword.TabIndex = 14;
             btnChangePassword.Text = "Đổi mật khẩu";
-            btnChangePassword.UseVisualStyleBackColor = true;
+            btnChangePassword.UseVisualStyleBackColor = false;
             btnChangePassword.Click += btnChangePassword_Click;
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.DeepSkyBlue;
             btnBack.Font = new Font("Segoe UI", 13.8F);
+            btnBack.ForeColor = Color.White;
             btnBack.Location = new Point(81, 298);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 38);
             btnBack.TabIndex = 13;
             btnBack.Text = "Trở lại";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
             // btnSendCode
             // 
+            btnSendCode.BackColor = Color.DeepSkyBlue;
             btnSendCode.Font = new Font("Segoe UI", 13.8F);
+            btnSendCode.ForeColor = Color.White;
             btnSendCode.Location = new Point(501, 143);
             btnSendCode.Name = "btnSendCode";
             btnSendCode.Size = new Size(139, 38);
             btnSendCode.TabIndex = 12;
             btnSendCode.Text = "Gửi mã";
-            btnSendCode.UseVisualStyleBackColor = true;
+            btnSendCode.UseVisualStyleBackColor = false;
             btnSendCode.Click += btnSendCode_Click;
             // 
             // txtNewPassword
@@ -198,6 +204,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 13.8F);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(81, 207);
             label5.Name = "label5";
             label5.Size = new Size(166, 31);
@@ -208,6 +215,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13.8F);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(81, 150);
             label4.Name = "label4";
             label4.Size = new Size(154, 31);
@@ -218,6 +226,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(81, 82);
             label3.Name = "label3";
             label3.Size = new Size(70, 31);
@@ -228,6 +237,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(81, 18);
             label2.Name = "label2";
             label2.Size = new Size(120, 31);
@@ -245,10 +255,11 @@
             // lblHeader
             // 
             lblHeader.AutoSize = true;
-            lblHeader.Font = new Font("Segoe UI", 13.8F);
+            lblHeader.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHeader.ForeColor = Color.White;
             lblHeader.Location = new Point(346, 21);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(170, 31);
+            lblHeader.Size = new Size(233, 41);
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Quên mật khẩu";
             // 
@@ -256,8 +267,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(879, 512);
             Controls.Add(panelMain);
+            ForeColor = Color.White;
             Name = "ForgetPassword";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ForgetPassword";

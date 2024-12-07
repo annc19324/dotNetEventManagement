@@ -120,6 +120,7 @@
             panelContent.Controls.Add(label3);
             panelContent.Controls.Add(label2);
             panelContent.Controls.Add(panel1);
+            panelContent.ForeColor = Color.White;
             panelContent.Location = new Point(21, 37);
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(783, 375);
@@ -136,24 +137,28 @@
             // 
             // btnChangePassword
             // 
-            btnChangePassword.Font = new Font("Segoe UI", 12F);
+            btnChangePassword.BackColor = Color.DeepSkyBlue;
+            btnChangePassword.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnChangePassword.ForeColor = Color.White;
             btnChangePassword.Location = new Point(496, 3);
             btnChangePassword.Name = "btnChangePassword";
             btnChangePassword.Size = new Size(272, 57);
             btnChangePassword.TabIndex = 1;
             btnChangePassword.Text = "Đổi mật khẩu";
-            btnChangePassword.UseVisualStyleBackColor = true;
+            btnChangePassword.UseVisualStyleBackColor = false;
             btnChangePassword.Click += btnChangePassword_Click;
             // 
             // btnUserHome
             // 
-            btnUserHome.Font = new Font("Segoe UI", 12F);
+            btnUserHome.BackColor = Color.DeepSkyBlue;
+            btnUserHome.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnUserHome.ForeColor = Color.White;
             btnUserHome.Location = new Point(6, 3);
             btnUserHome.Name = "btnUserHome";
             btnUserHome.Size = new Size(229, 57);
             btnUserHome.TabIndex = 0;
             btnUserHome.Text = "Trở lại trang chủ";
-            btnUserHome.UseVisualStyleBackColor = true;
+            btnUserHome.UseVisualStyleBackColor = false;
             btnUserHome.Click += btnUserHome_Click;
             // 
             // labelConfirmPasswordE
@@ -212,30 +217,33 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F);
-            label6.Location = new Point(39, 235);
+            label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(12, 235);
             label6.Name = "label6";
-            label6.Size = new Size(186, 28);
+            label6.Size = new Size(231, 31);
             label6.TabIndex = 5;
             label6.Text = "Xác nhận mật khẩu: ";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(39, 175);
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(12, 175);
             label3.Name = "label3";
-            label3.Size = new Size(142, 28);
+            label3.Size = new Size(176, 31);
             label3.TabIndex = 2;
             label3.Text = "Mật khẩu mới: ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(40, 113);
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(13, 113);
             label2.Name = "label2";
-            label2.Size = new Size(119, 28);
+            label2.Size = new Size(147, 31);
             label2.TabIndex = 1;
             label2.Text = "Mật khẩu cũ";
             // 
@@ -258,10 +266,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(266, 18);
             label1.Name = "label1";
-            label1.Size = new Size(260, 54);
+            label1.Size = new Size(277, 54);
             label1.TabIndex = 0;
             label1.Text = "Đổi mật khẩu";
             // 
@@ -381,7 +390,7 @@
             // 
             panelHeader.Controls.Add(lblMenu);
             panelHeader.Controls.Add(lblFullname);
-            panelHeader.Location = new Point(3, 8);
+            panelHeader.Location = new Point(3, -1);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(868, 53);
             panelHeader.TabIndex = 1;
@@ -405,6 +414,7 @@
             lblFullname.Anchor = AnchorStyles.None;
             lblFullname.AutoSize = true;
             lblFullname.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFullname.ForeColor = Color.White;
             lblFullname.Location = new Point(374, 11);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(115, 31);
@@ -415,6 +425,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(897, 586);
             Controls.Add(panelMain);
             Name = "ChangePasswordView";

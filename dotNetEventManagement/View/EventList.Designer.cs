@@ -136,19 +136,22 @@
             // 
             // btnRefresh
             // 
+            btnRefresh.BackColor = Color.DeepSkyBlue;
             btnRefresh.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRefresh.ForeColor = Color.White;
             btnRefresh.Location = new Point(1086, 0);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(72, 46);
             btnRefresh.TabIndex = 3;
             btnRefresh.Text = "⟳";
-            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.Transparent;
-            btnSearch.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSearch.BackColor = Color.DeepSkyBlue;
+            btnSearch.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.White;
             btnSearch.Location = new Point(893, 1);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(187, 47);
@@ -178,35 +181,41 @@
             // 
             // btnBack
             // 
-            btnBack.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBack.BackColor = Color.DeepSkyBlue;
+            btnBack.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnBack.ForeColor = Color.White;
             btnBack.Location = new Point(291, 329);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(211, 47);
             btnBack.TabIndex = 5;
             btnBack.Text = "Trang chủ";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
             // btnShowDetail
             // 
-            btnShowDetail.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnShowDetail.BackColor = Color.DeepSkyBlue;
+            btnShowDetail.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnShowDetail.ForeColor = Color.White;
             btnShowDetail.Location = new Point(508, 329);
             btnShowDetail.Name = "btnShowDetail";
             btnShowDetail.Size = new Size(365, 47);
             btnShowDetail.TabIndex = 2;
             btnShowDetail.Text = "Xem chi tiết sự kiện đã đăng ký";
-            btnShowDetail.UseVisualStyleBackColor = true;
+            btnShowDetail.UseVisualStyleBackColor = false;
             btnShowDetail.Click += btnShowDetail_Click;
             // 
             // btnRegistEvent
             // 
-            btnRegistEvent.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRegistEvent.BackColor = Color.DeepSkyBlue;
+            btnRegistEvent.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            btnRegistEvent.ForeColor = Color.White;
             btnRegistEvent.Location = new Point(879, 329);
             btnRegistEvent.Name = "btnRegistEvent";
             btnRegistEvent.Size = new Size(279, 47);
             btnRegistEvent.TabIndex = 4;
             btnRegistEvent.Text = "Đăng ký sự kiện";
-            btnRegistEvent.UseVisualStyleBackColor = true;
+            btnRegistEvent.UseVisualStyleBackColor = false;
             btnRegistEvent.Click += btnRegistEvent_Click;
             // 
             // dgvEventList
@@ -235,6 +244,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(439, 0);
             label1.Name = "label1";
             label1.Size = new Size(270, 41);
@@ -357,7 +367,7 @@
             // 
             panelHeader.Controls.Add(lblMenu);
             panelHeader.Controls.Add(lblFullname);
-            panelHeader.Location = new Point(2, 2);
+            panelHeader.Location = new Point(2, 0);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1215, 52);
             panelHeader.TabIndex = 1;
@@ -381,6 +391,7 @@
             lblFullname.Anchor = AnchorStyles.None;
             lblFullname.AutoSize = true;
             lblFullname.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFullname.ForeColor = Color.White;
             lblFullname.Location = new Point(500, 8);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(0, 31);
@@ -390,6 +401,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(1218, 598);
             Controls.Add(panelMain);
             Name = "EventList";

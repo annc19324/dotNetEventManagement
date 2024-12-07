@@ -21,7 +21,7 @@ namespace dotNetEventManagement.View
             InitializeComponent();
 
             this.user = Session.CurrentUser;
-            lblFullname.Text = user.Fullname;
+            lblFullname.Text = Session.CurrentUser.Fullname;
 
 
         }
@@ -30,16 +30,18 @@ namespace dotNetEventManagement.View
         {
             panelContainer.BringToFront();
             panelHome.SendToBack();
-            panelContainer.BackColor = Color.LightGray;
             panelHome.Enabled = false;
             pnlSlideMenu.BringToFront();
-            pnlSlideMenu.BackColor = Color.DarkGray;
+            pnlSlideMenu.BackColor = SystemColors.MenuHighlight;
+            panelContainer.BackColor = SystemColors.GradientActiveCaption;
+            panelHeader.BackColor = SystemColors.GradientActiveCaption;
+
 
             isOpeningMenu = true;
 
             new Thread(() =>
             {
-                for (int i = 0; i <= menuWidth; i += 10)
+                for (int i = 0; i <= menuWidth; i += 20)
                 {
                     this.Invoke((Action)(() =>
                     {
@@ -54,8 +56,10 @@ namespace dotNetEventManagement.View
         {
             panelHome.BringToFront();
             panelContainer.SendToBack();
-            panelContainer.BackColor = Color.Transparent;
             panelHome.Enabled = true;
+            panelContainer.BackColor = Color.Transparent;
+            panelHeader.BackColor = Color.Transparent;
+            pnlSlideMenu.BackColor= SystemColors.GradientActiveCaption;
 
             isOpeningMenu = false;
 
@@ -63,7 +67,7 @@ namespace dotNetEventManagement.View
 
             new Thread(() =>
             {
-                for (int i = menuWidth; i >= 0; i -= 10)
+                for (int i = menuWidth; i >= 0; i -= 20)
                 {
                     this.Invoke((Action)(() =>
                     {

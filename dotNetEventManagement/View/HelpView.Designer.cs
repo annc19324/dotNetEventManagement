@@ -75,13 +75,15 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.BackColor = Color.DeepSkyBlue;
+            button1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(407, 269);
             button1.Name = "button1";
             button1.Size = new Size(254, 50);
             button1.TabIndex = 3;
             button1.Text = "Trở lại trang chủ";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
             // 
             // linkLabel1
@@ -101,6 +103,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
             label1.Size = new Size(434, 46);
@@ -121,6 +124,7 @@
             lblFullname.Anchor = AnchorStyles.None;
             lblFullname.AutoSize = true;
             lblFullname.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFullname.ForeColor = Color.White;
             lblFullname.Location = new Point(364, 10);
             lblFullname.Name = "lblFullname";
             lblFullname.Size = new Size(115, 31);
@@ -131,6 +135,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.MenuHighlight;
             ClientSize = new Size(884, 572);
             Controls.Add(panelMain);
             Name = "HelpView";
