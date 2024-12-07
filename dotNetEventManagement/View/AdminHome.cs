@@ -53,62 +53,128 @@ namespace dotNetEventManagement.View
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            new EventManager().ShowDialog();
+            
+            this.Hide();
+            var newWindowState = new EventManager();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
 
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            new AccountManager().ShowDialog();
+            this.Hide();
+            var newWindowState = new AccountManager();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            new OrderManager().ShowDialog();
+            
+            this.Hide();
+            var newWindowState = new OrderManager();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            new LogInView().ShowDialog();
+            this.Hide();
+            var newWindowState = new LogInView();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
-            new AttendeeManager().ShowDialog();
+            this.Hide();
+            var newWindowState = new AttendeeManager();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new EventManager().ShowDialog();
+            this.Hide();
+            var newWindowState = new EventManager();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new OrderManager().ShowDialog();
+            
+            this.Hide();
+            var newWindowState = new OrderManager();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            new AccountManager().ShowDialog();
+            
+            this.Hide();
+            var newWindowState = new AccountManager();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            new AttendeeManager().ShowDialog();
+           
+            this.Hide();
+            var newWindowState = new AttendeeManager();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            new LogInView().ShowDialog();
+            
+            this.Hide();
+            var newWindowState = new LogInView();
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                newWindowState.WindowState = FormWindowState.Maximized;
+            }
+            newWindowState.ShowDialog();
             this.Close();
         }
     }
