@@ -37,18 +37,23 @@
             toolStripMenuItem5 = new ToolStripMenuItem();
             toolStripMenuItem6 = new ToolStripMenuItem();
             panel1 = new Panel();
-            panel2 = new Panel();
             panel3 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
             button5 = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            panel2 = new Panel();
             label1 = new Label();
+            panel4 = new Panel();
+            label2 = new Label();
+            dataGridView1 = new DataGridView();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -111,20 +116,13 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(0, 32);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 421);
             panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(label1);
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 62);
-            panel2.TabIndex = 0;
             // 
             // panel3
             // 
@@ -138,38 +136,16 @@
             panel3.Size = new Size(200, 353);
             panel3.TabIndex = 1;
             // 
-            // button1
+            // button5
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(16, 19);
-            button1.Name = "button1";
-            button1.Size = new Size(166, 44);
-            button1.TabIndex = 0;
-            button1.Text = "Quản Lý Sự Kiện ";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 12F);
-            button2.Location = new Point(16, 99);
-            button2.Name = "button2";
-            button2.Size = new Size(166, 41);
-            button2.TabIndex = 1;
-            button2.Text = "Quản Lý Đơn Hàng";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 12F);
-            button3.Location = new Point(16, 160);
-            button3.Name = "button3";
-            button3.Size = new Size(166, 37);
-            button3.TabIndex = 2;
-            button3.Text = "Quản Lý Tài Khoản";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            button5.Font = new Font("Segoe UI", 12F);
+            button5.Location = new Point(16, 299);
+            button5.Name = "button5";
+            button5.Size = new Size(166, 42);
+            button5.TabIndex = 4;
+            button5.Text = "Đăng Xuất";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -182,16 +158,46 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // button5
+            // button3
             // 
-            button5.Font = new Font("Segoe UI", 12F);
-            button5.Location = new Point(16, 299);
-            button5.Name = "button5";
-            button5.Size = new Size(166, 42);
-            button5.TabIndex = 4;
-            button5.Text = "Đăng Xuất";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            button3.Font = new Font("Segoe UI", 12F);
+            button3.Location = new Point(16, 160);
+            button3.Name = "button3";
+            button3.Size = new Size(166, 37);
+            button3.TabIndex = 2;
+            button3.Text = "Quản Lý Tài Khoản";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 12F);
+            button2.Location = new Point(16, 99);
+            button2.Name = "button2";
+            button2.Size = new Size(166, 41);
+            button2.TabIndex = 1;
+            button2.Text = "Quản Lý Đơn Hàng";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(16, 19);
+            button1.Name = "button1";
+            button1.Size = new Size(166, 44);
+            button1.TabIndex = 0;
+            button1.Text = "Quản Lý Sự Kiện ";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(800, 62);
+            panel2.TabIndex = 0;
             // 
             // label1
             // 
@@ -202,6 +208,36 @@
             label1.Size = new Size(174, 30);
             label1.TabIndex = 0;
             label1.Text = "Xin Chào Admin";
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(dataGridView1);
+            panel4.Controls.Add(label2);
+            panel4.Location = new Point(209, 70);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(588, 348);
+            panel4.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(178, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(212, 30);
+            label2.TabIndex = 0;
+            label2.Text = "Thống kê Đơn Hàng";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(24, 64);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(534, 272);
+            dataGridView1.TabIndex = 1;
             // 
             // AdminHome
             // 
@@ -216,9 +252,12 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -242,5 +281,8 @@
         private Button button4;
         private Button button3;
         private Label label1;
+        private Panel panel4;
+        private DataGridView dataGridView1;
+        private Label label2;
     }
 }
