@@ -70,15 +70,16 @@ namespace dotNetEventManagement.Controllers
                         {
                             User user = new User()
                             {
-                                UserId = reader.GetInt32(reader.GetOrdinal("UserId")),
-                                Username = reader.GetString(reader.GetOrdinal("Username")),
-                                Fullname = reader.GetString(reader.GetOrdinal("Fullname")),
-                                Password = reader.GetString(reader.GetOrdinal("Password")),
-                                DateOfBirth = reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
-                                Mail = reader.GetString(reader.GetOrdinal("Mail")),
-                                Phone = reader.GetString(reader.GetOrdinal("Phone")),
-                                Role = reader.GetString(reader.GetOrdinal("Role"))
+                                UserId = reader.IsDBNull(reader.GetOrdinal("UserId")) ? 0 : reader.GetInt32(reader.GetOrdinal("UserId")),
+                                Username = reader.IsDBNull(reader.GetOrdinal("Username")) ? null : reader.GetString(reader.GetOrdinal("Username")),
+                                Fullname = reader.IsDBNull(reader.GetOrdinal("Fullname")) ? null : reader.GetString(reader.GetOrdinal("Fullname")),
+                                Password = reader.IsDBNull(reader.GetOrdinal("Password")) ? null : reader.GetString(reader.GetOrdinal("Password")),
+                                DateOfBirth = reader.IsDBNull(reader.GetOrdinal("DateOfBirth")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("DateOfBirth")),
+                                Mail = reader.IsDBNull(reader.GetOrdinal("Mail")) ? null : reader.GetString(reader.GetOrdinal("Mail")),
+                                Phone = reader.IsDBNull(reader.GetOrdinal("Phone")) ? null : reader.GetString(reader.GetOrdinal("Phone")),
+                                Role = reader.IsDBNull(reader.GetOrdinal("Role")) ? null : reader.GetString(reader.GetOrdinal("Role"))
                             };
+
                             return user;
                         }
                         else
