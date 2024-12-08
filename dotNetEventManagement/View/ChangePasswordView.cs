@@ -65,9 +65,10 @@ namespace dotNetEventManagement.View
             }
             else if (!Regex.IsMatch(confirm, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$"))
             {
-                labelConfirmPasswordE.Text = "mật khẩu chứa ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số và 1 ít tự đặc biệt!";
+                labelNewPasswordE.Text = "mật khẩu chứa ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số và 1 ít tự đặc biệt!";
                 foundE = true;
             }
+
             if (string.IsNullOrEmpty(confirm))
             {
                 labelConfirmPasswordE.Text = "mật khẩu không được để trống";
@@ -317,6 +318,42 @@ namespace dotNetEventManagement.View
         {
             panelContent.Left = (panelHome.ClientSize.Width - panelContent.Width) / 2;
             panelContent.Top = (panelHome.ClientSize.Height - panelContent.Height) / 2;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            if(txtOldPassword.PasswordChar != '\0')
+            {
+                txtOldPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtOldPassword.PasswordChar = '•';
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            if (txtNewPassword.PasswordChar != '\0')
+            {
+                txtNewPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtNewPassword.PasswordChar = '•';
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            if (txtConfirmPassword.PasswordChar != '\0')
+            {
+                txtConfirmPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtConfirmPassword.PasswordChar = '•';
+            }
         }
     }
 }

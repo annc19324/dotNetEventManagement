@@ -31,6 +31,7 @@
             panelMain = new Panel();
             panelContainer = new Panel();
             panelLogIn = new Panel();
+            leakOrHidePassword = new Label();
             lblForgetPassword = new Label();
             btnSignUp = new Button();
             btnLogIn = new Button();
@@ -67,6 +68,7 @@
             // 
             // panelLogIn
             // 
+            panelLogIn.Controls.Add(leakOrHidePassword);
             panelLogIn.Controls.Add(lblForgetPassword);
             panelLogIn.Controls.Add(btnSignUp);
             panelLogIn.Controls.Add(btnLogIn);
@@ -80,6 +82,19 @@
             panelLogIn.Name = "panelLogIn";
             panelLogIn.Size = new Size(557, 309);
             panelLogIn.TabIndex = 0;
+            // 
+            // leakOrHidePassword
+            // 
+            leakOrHidePassword.AutoSize = true;
+            leakOrHidePassword.BackColor = Color.White;
+            leakOrHidePassword.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            leakOrHidePassword.ForeColor = Color.Black;
+            leakOrHidePassword.Location = new Point(468, 116);
+            leakOrHidePassword.Name = "leakOrHidePassword";
+            leakOrHidePassword.Size = new Size(46, 31);
+            leakOrHidePassword.TabIndex = 9;
+            leakOrHidePassword.Text = "👁";
+            leakOrHidePassword.Click += leakOrHidePassword_Click;
             // 
             // lblForgetPassword
             // 
@@ -232,5 +247,6 @@
         private Label lblUsernameE;
         private Label label3;
         private Label label2;
+        private Label leakOrHidePassword;
     }
 }

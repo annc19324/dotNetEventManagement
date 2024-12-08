@@ -81,6 +81,11 @@ namespace dotNetEventManagement.View
             {
                 return;
             }
+            bool checkUsername = userController.checkUsernameExist(username);
+            if (!checkUsername) {
+                lblUsernameE.Text = "Tên người dùng không tồn tại";
+                return;
+            }
 
             User user = userController.CheckLogin(username, password);
             if (user == null)
@@ -139,6 +144,18 @@ namespace dotNetEventManagement.View
             }
             newWindowState.ShowDialog();
             this.Close();
+        }
+
+        private void leakOrHidePassword_Click(object sender, EventArgs e)
+        {
+            if(txtPassword.PasswordChar == '•')
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '•';
+            }
         }
     }
 }

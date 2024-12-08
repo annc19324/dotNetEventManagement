@@ -32,9 +32,12 @@
             panelContainer = new Panel();
             panelHome = new Panel();
             panelContent = new Panel();
+            label7 = new Label();
+            label5 = new Label();
             panel3 = new Panel();
             btnChangePassword = new Button();
             btnUserHome = new Button();
+            label4 = new Label();
             labelConfirmPasswordE = new Label();
             labelNewPasswordE = new Label();
             labelOldPasswordE = new Label();
@@ -109,7 +112,10 @@
             // 
             panelContent.Anchor = AnchorStyles.None;
             panelContent.BackColor = Color.Transparent;
+            panelContent.Controls.Add(label7);
+            panelContent.Controls.Add(label5);
             panelContent.Controls.Add(panel3);
+            panelContent.Controls.Add(label4);
             panelContent.Controls.Add(labelConfirmPasswordE);
             panelContent.Controls.Add(labelNewPasswordE);
             panelContent.Controls.Add(labelOldPasswordE);
@@ -125,6 +131,32 @@
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(783, 375);
             panelContent.TabIndex = 0;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.White;
+            label7.Font = new Font("Segoe UI", 13.8F);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(728, 233);
+            label7.Name = "label7";
+            label7.Size = new Size(46, 31);
+            label7.TabIndex = 2;
+            label7.Text = "👁";
+            label7.Click += label7_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.White;
+            label5.Font = new Font("Segoe UI", 13.8F);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(728, 173);
+            label5.Name = "label5";
+            label5.Size = new Size(46, 31);
+            label5.TabIndex = 2;
+            label5.Text = "👁";
+            label5.Click += label5_Click;
             // 
             // panel3
             // 
@@ -160,6 +192,19 @@
             btnUserHome.Text = "Trở lại trang chủ";
             btnUserHome.UseVisualStyleBackColor = false;
             btnUserHome.Click += btnUserHome_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.White;
+            label4.Font = new Font("Segoe UI", 13.8F);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(728, 112);
+            label4.Name = "label4";
+            label4.Size = new Size(46, 31);
+            label4.TabIndex = 1;
+            label4.Text = "👁";
+            label4.Click += label4_Click;
             // 
             // labelConfirmPasswordE
             // 
@@ -211,6 +256,7 @@
             txtOldPassword.Font = new Font("Segoe UI", 12F);
             txtOldPassword.Location = new Point(238, 110);
             txtOldPassword.Name = "txtOldPassword";
+            txtOldPassword.PasswordChar = '•';
             txtOldPassword.Size = new Size(539, 34);
             txtOldPassword.TabIndex = 6;
             // 
@@ -484,5 +530,8 @@
         private Panel panelHeader;
         private Label lblMenu;
         private Label lblFullname;
+        private Label label7;
+        private Label label5;
+        private Label label4;
     }
 }

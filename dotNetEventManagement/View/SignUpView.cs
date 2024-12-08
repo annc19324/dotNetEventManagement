@@ -286,5 +286,29 @@ namespace dotNetEventManagement.View
                 MessageBox.Show($"Lỗi khi gửi email: {ex.Message}");
             }
         }
+
+        private void LeakOrHidePassword_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar != '\0')
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '•';
+            }
+        }
+
+        private void LeakOrHideConfirm_Click(object sender, EventArgs e)
+        {
+            if (txtConfirmPassword.PasswordChar != '\0')
+            {
+                txtConfirmPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtConfirmPassword.PasswordChar = '•';
+            }
+        }
     }
 }

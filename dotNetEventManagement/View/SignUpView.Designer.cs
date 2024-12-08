@@ -31,6 +31,8 @@
             panelMain = new Panel();
             panelContainer = new Panel();
             panelSignUp = new Panel();
+            LeakOrHideConfirm = new Label();
+            LeakOrHidePassword = new Label();
             lblCodeE = new Label();
             btnSignUp = new Button();
             label8 = new Label();
@@ -86,6 +88,8 @@
             // 
             // panelSignUp
             // 
+            panelSignUp.Controls.Add(LeakOrHideConfirm);
+            panelSignUp.Controls.Add(LeakOrHidePassword);
             panelSignUp.Controls.Add(lblCodeE);
             panelSignUp.Controls.Add(btnSignUp);
             panelSignUp.Controls.Add(label8);
@@ -119,6 +123,30 @@
             panelSignUp.Name = "panelSignUp";
             panelSignUp.Size = new Size(789, 604);
             panelSignUp.TabIndex = 0;
+            // 
+            // LeakOrHideConfirm
+            // 
+            LeakOrHideConfirm.AutoSize = true;
+            LeakOrHideConfirm.BackColor = Color.White;
+            LeakOrHideConfirm.ForeColor = Color.Black;
+            LeakOrHideConfirm.Location = new Point(693, 210);
+            LeakOrHideConfirm.Name = "LeakOrHideConfirm";
+            LeakOrHideConfirm.Size = new Size(47, 31);
+            LeakOrHideConfirm.TabIndex = 28;
+            LeakOrHideConfirm.Text = "👁";
+            LeakOrHideConfirm.Click += LeakOrHideConfirm_Click;
+            // 
+            // LeakOrHidePassword
+            // 
+            LeakOrHidePassword.AutoSize = true;
+            LeakOrHidePassword.BackColor = Color.White;
+            LeakOrHidePassword.ForeColor = Color.Black;
+            LeakOrHidePassword.Location = new Point(693, 146);
+            LeakOrHidePassword.Name = "LeakOrHidePassword";
+            LeakOrHidePassword.Size = new Size(47, 31);
+            LeakOrHidePassword.TabIndex = 27;
+            LeakOrHidePassword.Text = "👁";
+            LeakOrHidePassword.Click += LeakOrHidePassword_Click;
             // 
             // lblCodeE
             // 
@@ -463,5 +491,7 @@
         private TextBox txtEnterCode;
         private Label label8;
         private Label lblCodeE;
+        private Label LeakOrHideConfirm;
+        private Label LeakOrHidePassword;
     }
 }

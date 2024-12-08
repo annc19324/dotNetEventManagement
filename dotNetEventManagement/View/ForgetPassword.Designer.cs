@@ -48,6 +48,7 @@
             label2 = new Label();
             panelHeader = new Panel();
             lblHeader = new Label();
+            leakOrHide = new Label();
             panelMain.SuspendLayout();
             panelContainer.SuspendLayout();
             panelChangePassword.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // panelChangePassword
             // 
+            panelChangePassword.Controls.Add(leakOrHide);
             panelChangePassword.Controls.Add(btnChangePassword);
             panelChangePassword.Controls.Add(btnBack);
             panelChangePassword.Controls.Add(btnSendCode);
@@ -137,6 +139,7 @@
             txtNewPassword.Font = new Font("Segoe UI", 13.8F);
             txtNewPassword.Location = new Point(273, 207);
             txtNewPassword.Name = "txtNewPassword";
+            txtNewPassword.PasswordChar = '•';
             txtNewPassword.Size = new Size(367, 38);
             txtNewPassword.TabIndex = 11;
             // 
@@ -263,6 +266,19 @@
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Quên mật khẩu";
             // 
+            // leakOrHide
+            // 
+            leakOrHide.AutoSize = true;
+            leakOrHide.BackColor = Color.White;
+            leakOrHide.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            leakOrHide.ForeColor = Color.Black;
+            leakOrHide.Location = new Point(594, 210);
+            leakOrHide.Name = "leakOrHide";
+            leakOrHide.Size = new Size(46, 31);
+            leakOrHide.TabIndex = 15;
+            leakOrHide.Text = "👁";
+            leakOrHide.Click += leakOrHide_Click;
+            // 
             // ForgetPassword
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -307,5 +323,6 @@
         private Label label2;
         private Panel panelHeader;
         private Label lblHeader;
+        private Label leakOrHide;
     }
 }

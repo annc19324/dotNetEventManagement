@@ -180,13 +180,15 @@ namespace dotNetEventManagement.View
                 foundE = true;
             }
 
-            if (string.IsNullOrEmpty(code)) {
+            if (string.IsNullOrEmpty(code))
+            {
                 lblEnterCodeE.Text = "mã xác thực không được để trống!";
                 foundE = true;
-            }else if (code != CodeForForgetPassword)
+            }
+            else if (code != CodeForForgetPassword)
             {
                 lblEnterCodeE.Text = "mã xác thực không chính xác, vui lòng gửi lại!";
-                foundE=true;
+                foundE = true;
             }
 
 
@@ -195,7 +197,7 @@ namespace dotNetEventManagement.View
                 return;
             }
 
-            if(userController.changePassword(username, newPassword, mail))
+            if (userController.changePassword(username, newPassword, mail))
             {
                 this.Hide();
                 MessageBox.Show("Cập nhật mật khẩu thành công!");
@@ -212,6 +214,18 @@ namespace dotNetEventManagement.View
                 MessageBox.Show("cập nhật mật khẩu thất bại, mail " + mail + " không có trong tài khoản " + username + "!");
             }
 
+        }
+
+        private void leakOrHide_Click(object sender, EventArgs e)
+        {
+            if(txtNewPassword.PasswordChar != '\0')
+            {
+                txtNewPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtNewPassword.PasswordChar = '•';
+            }
         }
     }
 }
